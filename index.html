@@ -8,8 +8,9 @@
   <meta property="og:title" content="Jorge Flock · Inspección ultrasónica">
   <meta property="og:description" content="Ensayos no destructivos de rieles, soldaduras y componentes metálicos.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://estudioideamos.github.io/jorge-flock/assets/portada.webp">
+  <meta property="og:image" content="https://estudioideamos.github.io/jorge-flock/assets/rail-dawn.webp">
   <link rel="icon" href="assets/marca.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/rail-dawn.webp" as="image">
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js" defer></script>
   <title>Jorge Flock · Inspección y ensayos por ultrasonido</title>
@@ -30,7 +31,7 @@
 <main id="contenido">
   <section class="hero" aria-labelledby="titulo">
     <div class="hero-media">
-      <video id="hero-film" muted loop playsinline preload="none" poster="assets/portada.webp" data-src="assets/ferrocarril.mp4" aria-hidden="true"></video>
+      <video id="hero-film" muted loop playsinline preload="none" poster="assets/rail-dawn.webp" data-src="assets/rail-motion.mp4" data-autoplay aria-hidden="true"></video>
     </div>
     <div class="shell hero-inner">
       <p class="eyebrow"><span class="dash"></span> ENSAYOS NO DESTRUCTIVOS <span class="hero-slash">/</span> ARGENTINA</p>
@@ -38,22 +39,35 @@
       <span class="hero-line"><em>ultrasonido.</em></span></h1>
       <p class="hero-description">Ensayos de rieles, soldaduras y componentes metálicos. Experiencia de campo desde 1998.</p>
       <div class="hero-actions"><a class="button solid" href="#inspecciones">Explorar inspecciones</a><a class="button ghost" href="#contacto">Consultar a Jorge</a></div>
-      <div class="hero-bottom"><span>SEI <span class="hero-slash">/</span> ARCHIVO FERROVIARIO</span><button class="film-toggle" type="button" aria-controls="hero-film" hidden><i aria-hidden="true"></i><span>Reproducir video</span></button></div>
+      <div class="hero-bottom"><span>RECREACIÓN VISUAL <span class="hero-slash">/</span> VÍAS</span><button class="film-toggle" type="button" aria-controls="hero-film" hidden><i aria-hidden="true"></i><span>Reproducir video</span></button></div>
     </div>
   </section>
-  <div class="ticker"><div class="shell ticker-inner"><span>Ferroviaria</span><span>Aeronáutica</span><span>Naval</span><span>Metalmecánica</span><span>Metalúrgica</span><span>Petróleo y gas</span></div></div>
+  <div class="marquee ticker" role="group" aria-label="Industrias">
+    <div class="marquee-window"><div class="marquee-track">
+      <div class="marquee-group"><span>Ferroviaria</span><span>Aeronáutica</span><span>Naval</span><span>Metalmecánica</span><span>Metalúrgica</span><span>Petróleo y gas</span></div>
+      <div class="marquee-group marquee-copy" aria-hidden="true"><span>Ferroviaria</span><span>Aeronáutica</span><span>Naval</span><span>Metalmecánica</span><span>Metalúrgica</span><span>Petróleo y gas</span></div>
+    </div></div>
+    <button class="marquee-toggle" type="button" aria-label="Pausar cintas en movimiento" hidden><i aria-hidden="true"></i></button>
+  </div>
 
   <section class="services paper section" id="inspecciones" aria-labelledby="servicios-titulo">
     <div class="shell">
       <div class="section-heading" data-reveal><div><p class="eyebrow"><span class="dash"></span> SERVICIOS</p><h2 id="servicios-titulo">Cada pieza.<br>Cada <em>indicación.</em></h2></div><p>Cuatro modalidades de inspección para explorar el interior del material, desde una soldadura puntual hasta kilómetros de vía en servicio.</p></div>
       <div class="service-grid">
-        <a data-reveal class="service-card featured" href="inspeccion-ferroviaria/"><img src="assets/rail-8.webp" alt="" width="960" height="720" loading="lazy"><div class="service-content"><span class="eyebrow">CONTROL CONTINUO DE RIELES</span><h3>Ferroviaria</h3><p>Exploración ultrasónica de rieles en servicio y piezas individuales.</p><span class="card-link">Ver inspección</span></div></a>
-        <a data-reveal class="service-card" href="inspeccion-manual/"><img src="assets/manual-6.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">PIEZAS Y SOLDADURAS</span><h3>Manual</h3><p>Ensayos puntuales en componentes metálicos de distintas geometrías.</p><span class="card-link">Ver inspección</span></div></a>
-        <a data-reveal class="service-card" href="inspeccion-automatica/"><img src="assets/auto-1.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">SOLDADURAS CIRCUNFERENCIALES</span><h3>Automática</h3><p>Ultrasonido con multipalpadores, Phased Array y ToFD.</p><span class="card-link">Ver inspección</span></div></a>
-        <a data-reveal class="service-card" href="inspeccion-semi-automatica/"><img src="assets/semi-1.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">ACCESOS COMPLEJOS</span><h3>Semiautomática</h3><p>Barridos manuales con equipos de registro para soldaduras de cañerías.</p><span class="card-link">Ver inspección</span></div></a>
+        <a data-reveal class="service-card featured" href="inspeccion-ferroviaria/"><img src="assets/rail-inspection.webp" alt="" width="960" height="720" loading="lazy"><div class="service-content"><span class="eyebrow">CONTROL CONTINUO DE RIELES</span><h3>Ferroviaria</h3><p>Exploración ultrasónica de rieles en servicio y piezas individuales.</p><span class="card-link">Ver inspección</span></div></a>
+        <a data-reveal class="service-card" href="inspeccion-manual/"><img src="assets/manual-probe.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">PIEZAS Y SOLDADURAS</span><h3>Manual</h3><p>Ensayos puntuales en componentes metálicos de distintas geometrías.</p><span class="card-link">Ver inspección</span></div></a>
+        <a data-reveal class="service-card" href="inspeccion-automatica/"><img src="assets/automatic-weld.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">SOLDADURAS CIRCUNFERENCIALES</span><h3>Automática</h3><p>Ultrasonido con multipalpadores, Phased Array y ToFD.</p><span class="card-link">Ver inspección</span></div></a>
+        <a data-reveal class="service-card" href="inspeccion-semi-automatica/"><img src="assets/semi-inspection.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">ACCESOS COMPLEJOS</span><h3>Semiautomática</h3><p>Barridos manuales con equipos de registro para soldaduras de cañerías.</p><span class="card-link">Ver inspección</span></div></a>
       </div>
+      <p class="visual-caption">Escenas de inspección recreadas con fines ilustrativos.</p>
     </div>
   </section>
+  <div class="marquee marquee-materials" role="group" aria-label="Materiales y componentes inspeccionados">
+    <div class="marquee-window"><div class="marquee-track">
+      <div class="marquee-group"><span>Rieles</span><span>Soldaduras</span><span>Piezas metálicas</span><span>Componentes en servicio</span></div>
+      <div class="marquee-group marquee-copy" aria-hidden="true"><span>Rieles</span><span>Soldaduras</span><span>Piezas metálicas</span><span>Componentes en servicio</span></div>
+    </div></div>
+  </div>
 
   <section class="capability section" aria-labelledby="capacidad-titulo">
     <div class="shell capability-inner">
@@ -65,6 +79,13 @@
         <dl><div><dt>Canales de exploración</dt><dd>09</dd></div><div><dt>Ubicación de indicaciones</dt><dd>GPS</dd></div></dl>
       </div>
     </div>
+    <figure class="shell material-film" data-reveal>
+      <div class="material-film-frame">
+        <video id="steel-film" muted loop playsinline preload="none" poster="assets/steel-motion.webp" data-src="assets/steel-motion.mp4" data-autoplay aria-hidden="true"></video>
+        <button class="film-toggle" type="button" aria-controls="steel-film" hidden><i aria-hidden="true"></i><span>Reproducir video</span></button>
+      </div>
+      <figcaption>Detalle de una soldadura <span class="hero-slash">/</span> Recreación visual</figcaption>
+    </figure>
   </section>
 
   <section class="paper profile section" aria-labelledby="trayectoria-titulo">
