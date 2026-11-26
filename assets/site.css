@@ -98,10 +98,47 @@ figcaption{margin-top:.66rem;color:#50564c}
 .contact-data>div:last-child{border-bottom:1px solid var(--line)}
 .contact-data dt{color:#c9cbbd}
 .contact-data dd{margin-top:.25rem;font-size:1.08rem}
-.contact-data a:hover,.footer a:hover{color:var(--accent)}
-.footer{border-top:1px solid #fff2;background:#151816}
-.footer>.shell{min-height:5.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.footer>.shell>a:last-child{color:var(--muted);font-size:.8rem}
+.contact-data a:hover, .footer .brand:hover { color: var(--accent); }
+.footer {
+  border-top: 1px solid var(--line);
+  background: #151816;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding-block: clamp(1.65rem, 3.6vw, 2.85rem);
+}
+.footer .brand { transition: color .2s ease; }
+.footer .brand-name small { font-size: .63rem; }
+.footer-credit {
+  display: flex;
+  align-items: center;
+  gap: clamp(.9rem, 2vw, 1.6rem);
+  color: #d4d3c6;
+  font: .76rem/1.4 var(--mono);
+  transition: color .2s ease;
+}
+.footer-credit img {
+  width: clamp(6.8rem, 10vw, 8.4rem);
+  height: auto;
+  transition: transform .35s var(--motion);
+}
+.footer-credit::before {
+  content: "";
+  align-self: stretch;
+  width: 1px;
+  background: linear-gradient(transparent, #bb945c, transparent);
+}
+.footer-credit:hover, .footer-credit:focus-visible { color: var(--accent); }
+.footer-credit:hover img { transform: translateX(.2rem); }
+@media (max-width: 600px) {
+  .footer-inner { flex-direction: column; align-items: stretch; gap: 1.3rem; }
+  .footer-credit { width: fit-content; max-width: 100%; }
+  .footer-credit::before { display: none; }
+  .footer-credit img { order: -1; flex: none; }
+}
 .detail-hero{isolation:isolate;position:relative;display:flex;align-items:end;min-height:clamp(23rem,44vw,33rem);background:#2b332b center 42%/cover no-repeat}
 .detail-hero .shell{padding-block:3.5rem}
 .detail-hero h1{font-size:clamp(3.8rem,9.2vw,9rem);margin-top:1.15rem;max-width:68rem;text-wrap:initial}
