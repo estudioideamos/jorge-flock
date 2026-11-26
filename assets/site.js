@@ -301,6 +301,18 @@ document.querySelectorAll('[data-tech-panel]').forEach((panel) => {
   const options = panel.querySelector('.tech-options');
   const notes = panel.querySelectorAll('[data-tech-note]');
   const buttons = options.querySelectorAll('[data-tech-step]');
+  const replay = panel.querySelector('[data-tech-replay]');
+
+  const updateReplay = () => {
+    if (replay) replay.hidden = prefersLessMotion.matches || graphic.dataset.stage === '0';
+  };
+
+  if (replay) {
+    replay.addEventListener('click', () => {
+      for (const animation of graphic.getAnimations({ subtree: true })) animation.currentTime = 0;
+    });
+    prefersLessMotion.addEventListener('change', updateReplay);
+  }
 
   const show = (stage) => {
     graphic.dataset.stage = stage;
@@ -308,6 +320,7 @@ document.querySelectorAll('[data-tech-panel]').forEach((panel) => {
       button.setAttribute('aria-pressed', String(button.dataset.techStep === stage));
     }
     for (const note of notes) note.hidden = note.dataset.techNote !== stage;
+    updateReplay();
   };
 
   options.addEventListener('click', (event) => {

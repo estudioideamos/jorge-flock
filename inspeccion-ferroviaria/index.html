@@ -6,8 +6,8 @@
   <meta name="description" content="Control ultrasónico continuo de rieles en servicio y ensayos sobre rieles individuales.">
   <meta name="theme-color" content="#151817">
   <link rel="icon" href="../assets/marca.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/site.css?v=flock-technical">
-  <script src="../assets/site.js?v=flock-technical" defer></script>
+  <link rel="stylesheet" href="../assets/site.css?v=flock-rail-cutaway">
+  <script src="../assets/site.js?v=flock-rail-cutaway" defer></script>
   <title>Inspección ferroviaria · Jorge Flock SEI</title>
 </head>
 <body class="internal">
@@ -40,14 +40,113 @@
   </section>
   <div class="detail-body paper">
     <div class="shell">
-      <section class="tech-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
-  <div class="tech-graphic" data-tech-view><svg viewBox="55 10 370 266" aria-hidden="true"><path class="drawing-object" d="M142 50 Q142 40 155 40H325Q338 40 338 50V88Q338 105 320 108L271 118Q262 120 262 135V197Q262 213 280 216L350 229 372 254H108L130 229 200 216Q218 213 218 197V135Q218 120 209 118L160 108Q142 105 142 88Z"/><path class="drawing-line" d="M142 40h196m-98 0v214"/><g class="diagram-layer" data-layer="0"><path d="M172 62h135v23H172Z"/><path class="beam" d="M240 37v48"/></g><g class="diagram-layer" data-layer="1"><path d="M229 120h22v82h-22Z"/><path class="beam" d="M185 48l57 110"/></g><g class="diagram-layer" data-layer="2"><path d="M153 235h174l14 10H139Z"/><path class="beam" d="M300 52l-60 187"/></g></svg></div>
-  <div class="tech-explainer">
-    <p class="eyebrow">Exploración continua</p>
-    <h2 id="grafico-titulo">La inspección, de arriba abajo</h2>
-    <div class="tech-options" role="group" aria-label="Vistas del esquema" hidden><button type="button" data-tech-step="0" aria-pressed="true">Hongo</button><button type="button" data-tech-step="1" aria-pressed="false">Alma</button><button type="button" data-tech-step="2" aria-pressed="false">Patín</button></div>
-    <div class="tech-notes" aria-live="polite"><p data-tech-note="0"><strong>Hongo.</strong> El ensayo se aplica a rieles en servicio y a piezas individuales.</p><p data-tech-note="1"><strong>Alma.</strong> Los canales recorren el perfil interno a medida que el equipo avanza por la vía.</p><p data-tech-note="2"><strong>Patín.</strong> Los eventos detectados se documentan con los datos registrados durante la exploración.</p></div>
-    <small>Esquema conceptual</small>
+      <section class="tech-panel rail-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
+  <div class="tech-graphic rail-graphic" data-tech-view>
+    <p class="rail-view-label">CORTE DEL RIEL · VISTA EN PERSPECTIVA</p>
+    <svg viewBox="0 0 610 391" role="img" aria-labelledby="rail-svg-title rail-svg-desc">
+      <title id="rail-svg-title">Riel en perspectiva con rueda exploradora y corte transversal</title>
+      <desc id="rail-svg-desc">El extremo en primer plano permite distinguir la cabeza o hongo, el alma y el patín. La rueda exploradora se apoya más atrás, sobre la superficie de rodadura.</desc>
+      <defs>
+        <linearGradient id="rail-cut" x2=".8" y2="1">
+          <stop stop-color="#c4cdc5"/><stop offset=".22" stop-color="#7c8b83"/><stop offset=".53" stop-color="#525f59"/><stop offset=".8" stop-color="#84928a"/><stop offset="1" stop-color="#596860"/>
+        </linearGradient>
+        <linearGradient id="rail-top" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="#80928a"/><stop offset=".6" stop-color="#bdc8c0"/><stop offset="1" stop-color="#75867c"/>
+        </linearGradient>
+        <linearGradient id="rail-side" x2="0" y2="1">
+          <stop stop-color="#677b6d"/><stop offset=".5" stop-color="#334039"/><stop offset="1" stop-color="#68786d"/>
+        </linearGradient>
+        <radialGradient id="rail-wheel">
+          <stop stop-color="#798780"/><stop offset=".63" stop-color="#3a4841"/><stop offset="1" stop-color="#202923"/>
+        </radialGradient>
+        <pattern id="rail-gravel" width="64" height="48" patternUnits="userSpaceOnUse">
+          <path d="m3 40 10-9 12 4-4 10zm21-22 7-11 12 1 5 8-8 9zm24 22 4-10 10 1 2 9-9 7z" fill="#39423a" stroke="#566057" stroke-width=".8"/>
+          <path d="m5 8 6-4 7 4-3 8-9-1zm37 24-7-4-7 6 3 7 9-1z" fill="#50574e"/>
+        </pattern>
+      </defs>
+
+      <!-- The sleepers and ballast put the cutaway in the context of a track. -->
+      <path d="M105 265 437 98 596 145 596 356 119 372Z" fill="url(#rail-gravel)" opacity=".62"/>
+      <g fill="#57564a" stroke="#77786a" stroke-width="1">
+        <path d="m123 284 365 1-43 27-371-1z"/><path d="m215 234 337-2-39 25-341 2z"/><path d="m305 190 292-4-36 23-301 4z"/>
+      </g>
+      <g fill="none" stroke="#908f7c" stroke-width="1" opacity=".55">
+        <path d="m103 301 368 1m-281-53 341-2m-255-42 300-5"/>
+      </g>
+
+      <!-- Draw the surfaces behind the exposed rail section. -->
+      <path d="M340 184 538 89 556 70V51L358 146v19z" fill="url(#rail-side)" stroke="#91a098"/>
+      <path d="M276 210 474 115v52L276 262z" fill="#435349" stroke="#708177"/>
+      <path d="M294 279 492 184l35 9 32 27-198 95-33-27z" fill="url(#rail-side)" stroke="#829088"/>
+      <path d="M160 135 358 40h187L347 135Z" fill="url(#rail-top)" stroke="#9caea2"/>
+      <path d="m193 135 198-95m48 0-198 95m48 0 198-95m28 0-198 95" stroke="#dce5db" opacity=".25"/>
+      <path d="M160 135h187q11 0 11 11v19q0 15-18 19l-50 9q-13 5-13 19v49q0 14 15 18l36 9 33 27H149l32-27 37-10q15-4 15-17v-49q0-15-11-19l-52-9q-20-4-20-19v-19q0-11 10-11Z" fill="url(#rail-cut)" stroke="#c3cec2" stroke-width="2"/>
+      <path d="M161 142h185m-162 161h142m-80-105v72" fill="none" stroke="#d5ded8" opacity=".48"/>
+
+      <!-- This is the inspection wheel, shown above and behind the cut. -->
+      <g class="rail-probe">
+        <path d="m390 47 9-22h26l-10 21" fill="#d29a53" stroke="#ffcf91" stroke-width="2"/>
+        <ellipse cx="402" cy="55" rx="26" ry="24" fill="#202822" stroke="#71827a" stroke-width="2"/>
+        <ellipse cx="391" cy="59" rx="27" ry="25" fill="url(#rail-wheel)" stroke="#adbab0" stroke-width="2"/>
+        <ellipse cx="391" cy="59" rx="18" ry="17" fill="none" stroke="#9eafa3" opacity=".64"/>
+        <circle cx="391" cy="59" r="6" fill="#d0b48a" stroke="#333f38"/>
+        <path d="m408 45 39-14h15" fill="none" stroke="#d4ae7b" stroke-width="1.35"/>
+        <text x="465" y="29" class="rail-annotation"><tspan x="465">Rueda</tspan><tspan x="465" dy="19">exploradora</tspan></text>
+      </g>
+
+      <g class="rail-label" data-layer="1">
+        <path class="rail-label-line" d="M97 157h52"/><circle cx="150" cy="157" r="3"/>
+        <text x="15" y="154"><tspan>Cabeza</tspan><tspan x="15" dy="20">(hongo)</tspan></text>
+      </g>
+      <g class="rail-label" data-layer="2">
+        <path class="rail-label-line" d="M72 230h159"/><circle cx="233" cy="230" r="3"/>
+        <text x="15" y="234">Alma</text>
+      </g>
+      <g class="rail-label" data-layer="3">
+        <path class="rail-label-line" d="M73 301h96"/><circle cx="170" cy="301" r="3"/>
+        <text x="15" y="306">Patín</text>
+      </g>
+      <g class="rail-signal" data-layer="1">
+        <path class="rail-impact" d="M305 165l9 6 7-8"/>
+        <path class="rail-out" pathLength="100" d="M255 137 314 169"/>
+        <path class="rail-echo" pathLength="100" d="M314 169 262 136"/>
+      </g>
+      <g class="rail-signal" data-layer="2">
+        <path class="rail-impact" d="m246 224 8 6 10-6"/>
+        <path class="rail-out" pathLength="100" d="M255 137v91"/>
+        <path class="rail-echo" pathLength="100" d="M255 228 262 136"/>
+      </g>
+      <g class="rail-signal" data-layer="3">
+        <path class="rail-impact" d="m279 295 9 5 10-5"/>
+        <path class="rail-out" pathLength="100" d="M255 137 288 299"/>
+        <path class="rail-echo" pathLength="100" d="M288 299 262 136"/>
+      </g>
+      <circle class="rail-entry" cx="255" cy="137" r="4" fill="#ffca8a"/>
+    </svg>
+    <div class="rail-signal-key" aria-hidden="true"><span>Pulso emitido</span><span>Eco de retorno</span></div>
+  </div>
+  <div class="tech-explainer rail-explainer">
+    <p class="eyebrow">Inspección ferroviaria</p>
+    <h2 id="grafico-titulo">Cómo se inspecciona un riel</h2>
+    <p class="rail-intro">El equipo recorre la vía. Desde la superficie de rodadura envía pulsos de ultrasonido hacia el interior del acero.</p>
+    <div class="tech-options" role="group" aria-label="Partes del riel" hidden>
+      <button type="button" data-tech-step="0" aria-pressed="true">En la vía</button>
+      <button type="button" data-tech-step="1" aria-pressed="false">Cabeza</button>
+      <button type="button" data-tech-step="2" aria-pressed="false">Alma</button>
+      <button type="button" data-tech-step="3" aria-pressed="false">Patín</button>
+    </div>
+    <div class="tech-notes" aria-live="polite">
+      <p data-tech-note="0"><strong>En la vía.</strong> La rueda exploradora se mantiene en contacto con el riel. Elegí una parte para seguir el recorrido ilustrado del pulso y su eco.</p>
+      <p data-tech-note="1"><strong>Cabeza o hongo.</strong> Es la parte superior, sobre la que rueda el tren. Un eco puede aportar información sobre un cambio dentro del acero.</p>
+      <p data-tech-note="2"><strong>Alma.</strong> Es la parte angosta que une la cabeza con la base. El registro muestra cuánto tarda en volver la señal.</p>
+      <p data-tech-note="3"><strong>Patín.</strong> Es la base ancha que apoya sobre el durmiente. La cobertura de esta zona depende de la configuración del ensayo.</p>
+    </div>
+    <button class="rail-replay" type="button" data-tech-replay hidden>Repetir el pulso</button>
+    <small>Ilustración didáctica · Trayectorias de señal simplificadas.</small>
+    <a class="rail-archive" href="../assets/rail-3.webp">
+      <img src="../assets/rail-3.webp" alt="" width="144" height="104" loading="lazy">
+      <span><strong>El equipo en la vía</strong><small>Ampliar foto de archivo</small></span>
+    </a>
   </div>
 </section>
       <div class="detail-intro">
