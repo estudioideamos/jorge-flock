@@ -6,7 +6,7 @@
   <meta name="description" content="Ultrasonido automático para explorar soldaduras circunferenciales de cañerías.">
   <meta name="theme-color" content="#151817">
   <link rel="icon" href="../assets/marca.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/site.css?v=flock-photo-detail">
+  <link rel="stylesheet" href="../assets/site.css?v=flock-cutaways">
   <script src="../assets/site.js?v=flock-technical" defer></script>
   <title>Inspección automática · Jorge Flock SEI</title>
 </head>
@@ -40,14 +40,31 @@
   </section>
   <div class="detail-body paper">
     <div class="shell">
-      <section class="tech-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
-  <div class="tech-graphic" data-tech-view><svg viewBox="55 10 370 266" aria-hidden="true"><ellipse class="drawing-object" cx="240" cy="145" rx="108" ry="101"/><ellipse class="drawing-line" cx="240" cy="145" rx="77" ry="72"/><path class="drawing-line" d="M240 44v202m-108-101h216"/><g class="diagram-layer" data-layer="0"><path d="M131 132a110 102 0 0 1 93-89"/><rect x="217" y="23" width="46" height="34"/></g><g class="diagram-layer" data-layer="1"><path class="beam" d="M277 48a105 102 0 0 1 68 132"/><path d="m337 168 8 12 14-6"/></g><g class="diagram-layer" data-layer="2"><path d="M217 98h46v94h-46Z"/><path class="beam" d="m187 116 53 56 54-54"/></g></svg></div>
+      <section class="tech-panel cutaway-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
+  <div class="tech-graphic cutaway-graphic" data-tech-view>
+    <p class="rail-view-label">SOLDADURA · BARRIDO MOTORIZADO</p>
+    <div class="rail-scene">
+      <img src="../assets/cutaway-automatic.webp" alt="" width="1500" height="950" decoding="async">
+      <svg viewBox="0 0 600 380" role="img" aria-labelledby="cutaway-title cutaway-description">
+        <title id="cutaway-title">Escáner automático sobre la cañería</title>
+        <desc id="cutaway-description">Una cañería de acero en corte con un cordón de soldadura, un anillo guía y un carro motorizado encima.</desc>
+        <g class="cutaway-layer" data-layer="0"><g class="cutaway-callout"><path d="M331.8 43.2 L221.2 49H204.2"/><circle cx="331.8" cy="43.2" r="3"/><text x="40" y="54" text-anchor="start"><tspan x="40" dy="0">Carro motorizado</tspan></text></g><g class="cutaway-callout"><path d="M393.8 112.3 L514 113H532"/><circle cx="393.8" cy="112.3" r="3"/><text x="540" y="118" text-anchor="start"><tspan x="540" dy="0">Anillo</tspan><tspan x="540" dy="19">guía</tspan></text></g></g><g class="cutaway-layer" data-layer="1"><path class="cutaway-travel" pathLength="100" d="M335.1 59.7L342.3 62.1L349.4 65.1L356.4 68.8L363.2 73.0L369.9 77.8L376.4 83.1L382.6 88.9L388.5 95.3L394.1 102.0L399.3 109.1L404.0 116.6L408.4 124.3L412.3 132.3L415.7 140.5L418.6 148.8L420.9 157.2L422.7 165.7L424.0 174.1L424.7 182.5L424.8 190.7L424.4 198.8L423.4 206.6L421.8 214.2L419.7 221.4"/><circle class="cutaway-contact" cx="373.7" cy="133.8" r="7"/><g class="cutaway-callout"><path d="M373.7 133.8 L187.4 53H170.4"/><circle cx="373.7" cy="133.8" r="3"/><text x="45" y="58" text-anchor="start"><tspan x="45" dy="0">Cordón</tspan><tspan x="45" dy="19">de soldadura</tspan></text></g></g><g class="cutaway-layer" data-layer="2"><svg x="26" y="23" width="225" height="96" viewBox="0 0 225 96" class="cutaway-trace">
+    <rect x="1" y="1" width="223" height="94" rx="5" class="cutaway-screen"/>
+    <text x="11" y="20">Eco ilustrativo</text>
+    <path d="M12 39h199M12 55h199M12 71h199M42 32v49M74 32v49M106 32v49M138 32v49M170 32v49" class="cutaway-grid"/>
+    <path class="cutaway-travel" pathLength="100" d="M12 72h18l4-20 4 20 5-8 4 8h61l5-10 5 10 5-35 5 35 6-17 5 17 3-6 4 6h63"/>
+</svg><circle class="cutaway-contact" cx="299.3" cy="84.5" r="7"/></g>
+      </svg>
+    </div>
+    <div class="cutaway-legend">Escáner automático sobre la cañería</div>
+  </div>
   <div class="tech-explainer">
     <p class="eyebrow">Exploración circunferencial</p>
     <h2 id="grafico-titulo">Cómo se recorre una soldadura</h2>
     <div class="tech-options" role="group" aria-label="Vistas del esquema" hidden><button type="button" data-tech-step="0" aria-pressed="true">Montaje</button><button type="button" data-tech-step="1" aria-pressed="false">Barrido automático</button><button type="button" data-tech-step="2" aria-pressed="false">Evaluación</button></div>
     <div class="tech-notes" aria-live="polite"><p data-tech-note="0"><strong>Montaje.</strong> El sistema se posiciona alrededor de la cañería, junto al cordón de soldadura.</p><p data-tech-note="1"><strong>Barrido automático.</strong> El equipo recorre la circunferencia con un movimiento controlado.</p><p data-tech-note="2"><strong>Evaluación.</strong> Los datos de la exploración quedan registrados para evaluar las indicaciones.</p></div>
-    <small>Esquema conceptual</small>
+    <button class="rail-replay" type="button" data-tech-replay hidden>Repetir la animación</button>
+    <small>Reconstrucción 3D didáctica · Señales y recorridos ilustrativos.</small>
   </div>
 </section>
       <div class="detail-intro">

@@ -6,7 +6,7 @@
   <meta name="description" content="Evaluación de soldaduras circunferenciales en lugares de difícil acceso.">
   <meta name="theme-color" content="#151817">
   <link rel="icon" href="../assets/marca.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/site.css?v=flock-photo-detail">
+  <link rel="stylesheet" href="../assets/site.css?v=flock-cutaways">
   <script src="../assets/site.js?v=flock-technical" defer></script>
   <title>Inspección semiautomática · Jorge Flock SEI</title>
 </head>
@@ -40,14 +40,31 @@
   </section>
   <div class="detail-body paper">
     <div class="shell">
-      <section class="tech-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
-  <div class="tech-graphic" data-tech-view><svg viewBox="55 10 370 266" aria-hidden="true"><ellipse class="drawing-object" cx="240" cy="145" rx="108" ry="101"/><ellipse class="drawing-line" cx="240" cy="145" rx="77" ry="72"/><path class="drawing-line" d="M240 44v202m-108-101h216"/><g class="diagram-layer" data-layer="0"><path d="M131 132a110 102 0 0 1 93-89"/><rect x="217" y="23" width="46" height="34"/></g><g class="diagram-layer" data-layer="1"><path class="beam" d="M277 48a105 102 0 0 1 68 132"/><path d="m337 168 8 12 14-6"/></g><g class="diagram-layer" data-layer="2"><path d="M217 98h46v94h-46Z"/><path class="beam" d="m187 116 53 56 54-54"/></g></svg></div>
+      <section class="tech-panel cutaway-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
+  <div class="tech-graphic cutaway-graphic" data-tech-view>
+    <p class="rail-view-label">SOLDADURA · BARRIDO GUIADO A MANO</p>
+    <div class="rail-scene">
+      <img src="../assets/cutaway-semi.webp" alt="" width="1500" height="950" decoding="async">
+      <svg viewBox="0 0 600 380" role="img" aria-labelledby="cutaway-title cutaway-description">
+        <title id="cutaway-title">Escáner guiado a mano sobre la cañería</title>
+        <desc id="cutaway-description">Un escáner compacto con asa, ruedas y cable sobre una cañería soldada, junto a un soporte que limita el acceso.</desc>
+        <g class="cutaway-layer" data-layer="0"><g class="cutaway-callout"><path d="M309.6 55.1 L201.5 52H184.5"/><circle cx="309.6" cy="55.1" r="3"/><text x="30" y="57" text-anchor="start"><tspan x="30" dy="0">Asa del escáner</tspan></text></g><g class="cutaway-callout"><path d="M511.6 42.8 L503.6 94H497.6"/><circle cx="511.6" cy="42.8" r="3"/><text x="468" y="99" text-anchor="start"><tspan x="468" dy="0">Acceso</tspan><tspan x="468" dy="19">limitado</tspan></text></g></g><g class="cutaway-layer" data-layer="1"><path class="cutaway-travel" pathLength="100" d="M309.1 79.0L313.4 80.2L317.7 81.8L322.0 83.5L326.2 85.5L330.4 87.7L334.5 90.1L338.6 92.8L342.6 95.6L346.5 98.7L350.3 101.9L354.0 105.4L357.6 109.0L361.1 112.7L364.5 116.7L367.7 120.8L370.7 125.0L373.7 129.3L376.4 133.8L379.0 138.4L381.4 143.1L383.6 147.8L385.7 152.6L387.5 157.5L389.2 162.5"/><circle class="cutaway-contact" cx="374.6" cy="132.6" r="7"/><g class="cutaway-callout"><path d="M323.6 86.1 L197.1 52H180.1"/><circle cx="323.6" cy="86.1" r="3"/><text x="45" y="57" text-anchor="start"><tspan x="45" dy="0">Palpador</tspan><tspan x="45" dy="19">guiado a mano</tspan></text></g></g><g class="cutaway-layer" data-layer="2"><svg x="20" y="20" width="225" height="96" viewBox="0 0 225 96" class="cutaway-trace">
+    <rect x="1" y="1" width="223" height="94" rx="5" class="cutaway-screen"/>
+    <text x="11" y="20">Eco ilustrativo</text>
+    <path d="M12 39h199M12 55h199M12 71h199M42 32v49M74 32v49M106 32v49M138 32v49M170 32v49" class="cutaway-grid"/>
+    <path class="cutaway-travel" pathLength="100" d="M12 72h18l4-20 4 20 5-8 4 8h61l5-10 5 10 5-35 5 35 6-17 5 17 3-6 4 6h63"/>
+</svg><circle class="cutaway-contact" cx="323.6" cy="86.1" r="7"/></g>
+      </svg>
+    </div>
+    <div class="cutaway-legend">Escáner guiado a mano sobre la cañería</div>
+  </div>
   <div class="tech-explainer">
     <p class="eyebrow">Exploración en acceso difícil</p>
     <h2 id="grafico-titulo">Movimiento manual, registro instrumental</h2>
     <div class="tech-options" role="group" aria-label="Vistas del esquema" hidden><button type="button" data-tech-step="0" aria-pressed="true">Posición inicial</button><button type="button" data-tech-step="1" aria-pressed="false">Barrido manual</button><button type="button" data-tech-step="2" aria-pressed="false">Registro</button></div>
     <div class="tech-notes" aria-live="polite"><p data-tech-note="0"><strong>Posición inicial.</strong> El equipo liviano puede ubicarse en una zona con acceso limitado.</p><p data-tech-note="1"><strong>Barrido manual.</strong> El operador guía el palpador a lo largo de la soldadura.</p><p data-tech-note="2"><strong>Registro.</strong> El sistema registra las señales para su posterior evaluación.</p></div>
-    <small>Esquema conceptual</small>
+    <button class="rail-replay" type="button" data-tech-replay hidden>Repetir la animación</button>
+    <small>Reconstrucción 3D didáctica · Señales y recorridos ilustrativos.</small>
   </div>
 </section>
       <div class="detail-intro">

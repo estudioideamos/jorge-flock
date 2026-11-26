@@ -6,7 +6,7 @@
   <meta name="description" content="Sistema continuo para control ultrasónico de rieles con nueve canales independientes.">
   <meta name="theme-color" content="#151817">
   <link rel="icon" href="../assets/marca.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/site.css?v=flock-photo-detail">
+  <link rel="stylesheet" href="../assets/site.css?v=flock-cutaways">
   <script src="../assets/site.js?v=flock-technical" defer></script>
   <title>Equipamiento · Jorge Flock SEI</title>
 </head>
@@ -39,14 +39,31 @@
   </section>
   <div class="detail-body paper">
     <div class="shell">
-      <section class="tech-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
-  <div class="tech-graphic" data-tech-view><svg viewBox="55 10 370 266" aria-hidden="true"><path class="drawing-object" d="M142 50 Q142 40 155 40H325Q338 40 338 50V88Q338 105 320 108L271 118Q262 120 262 135V197Q262 213 280 216L350 229 372 254H108L130 229 200 216Q218 213 218 197V135Q218 120 209 118L160 108Q142 105 142 88Z"/><path class="drawing-line" d="M142 40h196m-98 0v214"/><g class="diagram-layer" data-layer="0"><path d="M172 62h135v23H172Z"/><path class="beam" d="M240 37v48"/></g><g class="diagram-layer" data-layer="1"><path d="M229 120h22v82h-22Z"/><path class="beam" d="M185 48l57 110"/></g><g class="diagram-layer" data-layer="2"><rect x="283" y="133" width="126" height="71"/><path class="beam" d="M297 176h14l11-23 10 23h18l11-14 9 14h24"/></g></svg></div>
+      <section class="tech-panel cutaway-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
+  <div class="tech-graphic cutaway-graphic" data-tech-view>
+    <p class="rail-view-label">RIEL · EXPLORACIÓN Y REGISTRO</p>
+    <div class="rail-scene">
+      <img src="../assets/rail-cutaway.webp" alt="" width="1500" height="950" decoding="async">
+      <svg viewBox="0 0 600 380" role="img" aria-labelledby="cutaway-title cutaway-description">
+        <title id="cutaway-title">Del contacto en el riel al registro</title>
+        <desc id="cutaway-description">Un riel con una rueda exploradora en contacto. El corte muestra el acero y permite ilustrar trayectorias de exploración.</desc>
+        <g class="cutaway-layer" data-layer="0"><circle class="cutaway-contact" cx="375.5" cy="82.2" r="7"/><g class="cutaway-callout"><path d="M375.5 82.2 L419 44H437"/><circle cx="375.5" cy="82.2" r="3"/><text x="445" y="49" text-anchor="start"><tspan x="445" dy="0">Rueda</tspan><tspan x="445" dy="19">exploradora</tspan></text></g></g><g class="cutaway-layer" data-layer="1"><path class="cutaway-travel" pathLength="100" d="M209.9 191.6L227.2 212.0"/><path class="cutaway-travel" pathLength="100" d="M209.9 191.6L210.5 249.9"/><path class="cutaway-travel" pathLength="100" d="M209.9 191.6L214.9 294.9"/><circle class="cutaway-contact" cx="209.9" cy="191.6" r="7"/></g><g class="cutaway-layer" data-layer="2"><svg x="23" y="32" width="225" height="96" viewBox="0 0 225 96" class="cutaway-trace">
+    <rect x="1" y="1" width="223" height="94" rx="5" class="cutaway-screen"/>
+    <text x="11" y="20">Eco ilustrativo</text>
+    <path d="M12 39h199M12 55h199M12 71h199M42 32v49M74 32v49M106 32v49M138 32v49M170 32v49" class="cutaway-grid"/>
+    <path class="cutaway-travel" pathLength="100" d="M12 72h18l4-20 4 20 5-8 4 8h61l5-10 5 10 5-35 5 35 6-17 5 17 3-6 4 6h63"/>
+</svg><circle class="cutaway-contact" cx="375.5" cy="82.2" r="7"/></g>
+      </svg>
+    </div>
+    <div class="cutaway-legend">Del contacto en el riel al registro</div>
+  </div>
   <div class="tech-explainer">
     <p class="eyebrow">Nueve canales independientes</p>
     <h2 id="grafico-titulo">Un riel, distintas direcciones de exploración</h2>
     <div class="tech-options" role="group" aria-label="Vistas del esquema" hidden><button type="button" data-tech-step="0" aria-pressed="true">Superficie de rodadura</button><button type="button" data-tech-step="1" aria-pressed="false">Interior del riel</button><button type="button" data-tech-step="2" aria-pressed="false">Registro del evento</button></div>
     <div class="tech-notes" aria-live="polite"><p data-tech-note="0"><strong>Superficie de rodadura.</strong> El equipo explora desde la superficie superior.</p><p data-tech-note="1"><strong>Interior del riel.</strong> Los canales independientes permiten examinar el hongo, el alma y sus uniones desde distintas direcciones.</p><p data-tech-note="2"><strong>Registro del evento.</strong> El registro puede incluir posición, longitud, profundidad, progresiva y ubicación GPS.</p></div>
-    <small>Esquema conceptual</small>
+    <button class="rail-replay" type="button" data-tech-replay hidden>Repetir la animación</button>
+    <small>Reconstrucción 3D didáctica · Señales y recorridos ilustrativos.</small>
   </div>
 </section>
       <div class="detail-intro">

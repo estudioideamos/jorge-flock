@@ -6,7 +6,7 @@
   <meta name="description" content="Ensayos puntuales de piezas metálicas, soldaduras y componentes aeronáuticos.">
   <meta name="theme-color" content="#151817">
   <link rel="icon" href="../assets/marca.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/site.css?v=flock-photo-detail">
+  <link rel="stylesheet" href="../assets/site.css?v=flock-cutaways">
   <script src="../assets/site.js?v=flock-technical" defer></script>
   <title>Inspección manual · Jorge Flock SEI</title>
 </head>
@@ -40,14 +40,31 @@
   </section>
   <div class="detail-body paper">
     <div class="shell">
-      <section class="tech-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
-  <div class="tech-graphic" data-tech-view><svg viewBox="55 10 370 266" aria-hidden="true"><path class="drawing-object" d="M80 140h320v104H80Z"/><path class="drawing-line" d="M80 166h320M80 224h320M181 76q0-39 70-40"/><path class="drawing-object" d="M161 75h40l24 65h-85Z"/><g class="diagram-layer" data-layer="0"><path d="M153 143h59"/><circle cx="182" cy="141" r="10"/></g><g class="diagram-layer" data-layer="1"><path class="beam" d="m182 143 74 77 72-68"/><path d="m245 224 11-13 20 3"/></g><g class="diagram-layer" data-layer="2"><path d="M307 66h110v56H307Z"/><path class="beam" d="M319 107h16l9-23 10 23h20l8-13 10 13h13"/></g></svg></div>
+      <section class="tech-panel cutaway-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
+  <div class="tech-graphic cutaway-graphic" data-tech-view>
+    <p class="rail-view-label">PIEZA METÁLICA · CORTE DIDÁCTICO</p>
+    <div class="rail-scene">
+      <img src="../assets/cutaway-manual.webp" alt="" width="1500" height="950" decoding="async">
+      <svg viewBox="0 0 600 380" role="img" aria-labelledby="cutaway-title cutaway-description">
+        <title id="cutaway-title">Palpador sobre una pieza de acero</title>
+        <desc id="cutaway-description">Vista en perspectiva de un palpador cableado apoyado sobre la pieza, con la cara de corte a la vista.</desc>
+        <g class="cutaway-layer" data-layer="0"><g class="cutaway-callout"><path d="M240.2 104.2 L367 53H385"/><circle cx="240.2" cy="104.2" r="3"/><text x="393" y="58" text-anchor="start"><tspan x="393" dy="0">Palpador</tspan></text></g><circle class="cutaway-contact" cx="239.3" cy="139.1" r="7"/></g><g class="cutaway-layer" data-layer="1"><path class="cutaway-travel" pathLength="100" d="M193.7 188.4L273.1 281.7"/><path class="cutaway-echo" pathLength="100" d="M273.1 281.7L204.2 191.6"/><circle class="cutaway-contact" cx="273.1" cy="281.7" r="7"/><g class="cutaway-callout"><path d="M273.1 281.7 L365 266H383"/><circle cx="273.1" cy="281.7" r="3"/><text x="391" y="271" text-anchor="start"><tspan x="391" dy="0">Reflexión</tspan><tspan x="391" dy="19">ilustrativa</tspan></text></g></g><g class="cutaway-layer" data-layer="2"><svg x="341" y="22" width="225" height="96" viewBox="0 0 225 96" class="cutaway-trace">
+    <rect x="1" y="1" width="223" height="94" rx="5" class="cutaway-screen"/>
+    <text x="11" y="20">Eco ilustrativo</text>
+    <path d="M12 39h199M12 55h199M12 71h199M42 32v49M74 32v49M106 32v49M138 32v49M170 32v49" class="cutaway-grid"/>
+    <path class="cutaway-travel" pathLength="100" d="M12 72h18l4-20 4 20 5-8 4 8h61l5-10 5 10 5-35 5 35 6-17 5 17 3-6 4 6h63"/>
+</svg><g class="cutaway-callout"><path d="M336.7 301.3 L395 306H413"/><circle cx="336.7" cy="301.3" r="3"/><text x="421" y="311" text-anchor="start"><tspan x="421" dy="0">Pieza de acero</tspan></text></g></g>
+      </svg>
+    </div>
+    <div class="cutaway-legend">Palpador sobre una pieza de acero</div>
+  </div>
   <div class="tech-explainer">
     <p class="eyebrow">Ensayo puntual</p>
     <h2 id="grafico-titulo">Del contacto a la señal</h2>
     <div class="tech-options" role="group" aria-label="Vistas del esquema" hidden><button type="button" data-tech-step="0" aria-pressed="true">Palpador</button><button type="button" data-tech-step="1" aria-pressed="false">Eco</button><button type="button" data-tech-step="2" aria-pressed="false">Evaluación</button></div>
     <div class="tech-notes" aria-live="polite"><p data-tech-note="0"><strong>Palpador.</strong> El operador apoya y desplaza el palpador sobre la pieza.</p><p data-tech-note="1"><strong>Eco.</strong> Una señal que vuelve al palpador aporta información sobre el interior de la pieza.</p><p data-tech-note="2"><strong>Evaluación.</strong> El operador interpreta las indicaciones según la pieza, la soldadura y el procedimiento aplicable.</p></div>
-    <small>Esquema conceptual</small>
+    <button class="rail-replay" type="button" data-tech-replay hidden>Repetir la animación</button>
+    <small>Reconstrucción 3D didáctica · Señales y recorridos ilustrativos.</small>
   </div>
 </section>
       <div class="detail-intro">
