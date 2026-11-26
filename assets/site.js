@@ -136,6 +136,28 @@ if (trace) {
     else context.lineTo(x, baseline - height);
   }
   context.stroke();
+
+  const instrument = trace.closest('.instrument');
+  const steps = instrument.querySelector('.trace-steps');
+  const cursor = instrument.querySelector('.trace-cursor');
+  const explanation = instrument.querySelector('.instrument-label');
+  const readings = [
+    { position: '8.5%', text: 'Emisión. El primer pico marca el envío del pulso.' },
+    { position: '42%', text: 'Eco ilustrativo. La separación entre los picos representa el tiempo que tarda en volver la señal.' }
+  ];
+
+  steps.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-trace-step]');
+    if (!button) return;
+    const reading = readings[Number(button.dataset.traceStep)];
+    for (const step of steps.querySelectorAll('button')) {
+      step.setAttribute('aria-pressed', String(step === button));
+    }
+    cursor.hidden = false;
+    cursor.style.left = reading.position;
+    explanation.textContent = reading.text;
+  });
+  steps.hidden = false;
 }
 
 if ('IntersectionObserver' in window && !prefersLessMotion.matches) {
@@ -268,6 +290,16 @@ if (gallery && 'HTMLDialogElement' in window && 'showModal' in HTMLDialogElement
     const [previous, next] = controls.querySelectorAll('button');
     const position = controls.querySelector('span');
     let index = 0;
+    let photoEntrance;
+
+    fullPhoto.addEventListener('load', () => {
+      if (!viewer.open || prefersLessMotion.matches) return;
+      photoEntrance?.cancel();
+      photoEntrance = fullPhoto.animate(
+        [{ opacity: .65, transform: 'translateY(3px)' }, { opacity: 1, transform: 'translateY(0)' }],
+        { duration: 240, easing: 'ease-out' }
+      );
+    });
 
     const showPhoto = (requestedIndex) => {
       index = (requestedIndex + photos.length) % photos.length;

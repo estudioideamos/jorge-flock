@@ -6,21 +6,22 @@
   <meta name="description" content="Ultrasonido automático para explorar soldaduras circunferenciales de cañerías.">
   <meta name="theme-color" content="#151817">
   <link rel="icon" href="../assets/marca.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/site.css?v=flock-gallery-layout">
-  <script src="../assets/site.js?v=flock-technical" defer></script>
+  <link rel="stylesheet" href="../assets/site.css?v=flock-field">
+  <script src="../assets/site.js?v=flock-field" defer></script>
   <title>Inspección automática · Jorge Flock SEI</title>
 </head>
 <body class="internal">
+<div class="reading-progress" aria-hidden="true"></div>
 <a class="skip" href="#contenido">Ir al contenido</a>
 <header class="masthead">
   <div class="shell header-inner">
     <a class="brand" href="../" aria-label="SEI Jorge Flock, inicio"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-name">JORGE FLOCK<small>S E I / ULTRASONIDO</small></span></a>
-    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menú</button>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu"><span class="menu-toggle-icon" aria-hidden="true"></span><span class="menu-toggle-label">Menú</span></button>
     <nav class="nav" id="menu" aria-label="Principal">
       <a href="../sobre-la-empresa/">Sobre la empresa</a>
       <details class="nav-inspections" data-current>
         <summary>Inspecciones <span class="nav-chevron" aria-hidden="true"></span></summary>
-        <div class="nav-options"><a href="../#inspecciones">Todas las inspecciones</a><a href="../inspeccion-ferroviaria/"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3 4 21M17 3l3 18M6 6h12M5.5 10h13M5 15h14M3 20h18"/></svg>Inspección ferroviaria</a><a href="../inspeccion-manual/"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M6 15h12M10 12l5-5 3 3-5 5M15 7l3-4h3M8 10l-2 2m2-6-4 4"/></svg>Inspección manual</a><a href="../inspeccion-automatica/" aria-current="page"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>Inspección automática</a><a href="../inspeccion-semi-automatica/"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a8 8 0 1 0 8 8m-8-3a3 3 0 1 0 3 3M15 3h6v6m0-6-6 6"/></svg>Inspección semiautomática</a></div>
+        <div class="nav-options"><a href="../#inspecciones">Todas las inspecciones</a><a href="../inspeccion-ferroviaria/" aria-labelledby="nav-inspeccion-ferroviaria" aria-describedby="nav-inspeccion-ferroviaria-detail"><span class="nav-option-icon"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3 4 21M17 3l3 18M6 6h12M5.5 10h13M5 15h14M3 20h18"/></svg></span><span class="nav-option-copy"><strong id="nav-inspeccion-ferroviaria">Inspección ferroviaria</strong><small id="nav-inspeccion-ferroviaria-detail">Exploración continua de rieles</small></span></a><a href="../inspeccion-manual/" aria-labelledby="nav-inspeccion-manual" aria-describedby="nav-inspeccion-manual-detail"><span class="nav-option-icon"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M6 15h12M10 12l5-5 3 3-5 5M15 7l3-4h3M8 10l-2 2m2-6-4 4"/></svg></span><span class="nav-option-copy"><strong id="nav-inspeccion-manual">Inspección manual</strong><small id="nav-inspeccion-manual-detail">Piezas, soldaduras y componentes</small></span></a><a href="../inspeccion-automatica/" aria-current="page" aria-labelledby="nav-inspeccion-automatica" aria-describedby="nav-inspeccion-automatica-detail"><span class="nav-option-icon"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg></span><span class="nav-option-copy"><strong id="nav-inspeccion-automatica">Inspección automática</strong><small id="nav-inspeccion-automatica-detail">Barrido motorizado de soldaduras</small></span></a><a href="../inspeccion-semi-automatica/" aria-labelledby="nav-inspeccion-semi-automatica" aria-describedby="nav-inspeccion-semi-automatica-detail"><span class="nav-option-icon"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a8 8 0 1 0 8 8m-8-3a3 3 0 1 0 3 3M15 3h6v6m0-6-6 6"/></svg></span><span class="nav-option-copy"><strong id="nav-inspeccion-semi-automatica">Inspección semiautomática</strong><small id="nav-inspeccion-semi-automatica-detail">Barrido guiado en accesos complejos</small></span></a></div>
       </details>
       <a href="../defectologia/">Defectología</a><a href="../equipamiento/">Equipamiento</a><a href="../recursos/">Recursos</a>
       <a class="nav-contact" href="../#contacto">Contacto</a>
@@ -38,6 +39,13 @@
       <p class="detail-visual-credit">Imagen ilustrativa</p>
     </div>
   </section>
+  <div class="detail-section-bar">
+    <nav class="shell detail-section-nav" aria-label="En esta página">
+      <a href="#esquema">Esquema interactivo</a>
+      <a href="#detalle">Detalles técnicos</a>
+      <a href="#galeria">Archivo fotográfico</a>
+    </nav>
+  </div>
   <div class="detail-body paper">
     <div class="shell">
       <section class="tech-panel cutaway-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
@@ -67,7 +75,7 @@
     <small>Reconstrucción 3D didáctica · Señales y recorridos ilustrativos.</small>
   </div>
 </section>
-      <div class="detail-intro">
+      <div class="detail-intro" id="detalle">
         <article class="detail-copy"><h2>Métodos y experiencia</h2><p>La experiencia en ultrasonido automático comenzó en 2006 con el proyecto Tranque de Relaves Mauro de Minera Los Pelambres, en Chile. El trabajo incluyó la exploración y evaluación de indicaciones en soldaduras circunferenciales con el sistema Pipescan.</p>
 <h3>Multipalpadores, Phased Array y ToFD</h3><p>La formación en sistemas UT Scan con UTQuality en Brasil y Canadá se complementó con trabajos en gasoductos de GDK y GASTAU. Jorge Flock obtuvo calificaciones de Nivel 2 para técnicas y sistemas específicos durante esos proyectos.</p>
 <p>Actualmente, la experiencia acumulada se aplica a inspecciones, asesoramiento y capacitación de equipos técnicos que incorporan estas modalidades de ensayo.</p></article>
