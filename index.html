@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jorge Flock · SEI. Ensayos no destructivos e inspección por ultrasonido de rieles, soldaduras y piezas metálicas. Experiencia en Argentina desde 1998.">
+  <meta name="theme-color" content="#151817">
+  <meta property="og:title" content="Jorge Flock · Inspección ultrasónica">
+  <meta property="og:description" content="Ensayos no destructivos de rieles, soldaduras y componentes metálicos.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://estudioideamos.github.io/jorge-flock/assets/portada.webp">
+  <link rel="icon" href="assets/marca.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+  <title>Jorge Flock · Inspección y ensayos por ultrasonido</title>
+</head>
+<body>
+<a class="skip" href="#contenido">Ir al contenido</a>
+<header class="masthead">
+  <div class="shell header-inner">
+    <a class="brand" href="./" aria-label="SEI Jorge Flock, inicio"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-name">JORGE FLOCK<small>S E I / ULTRASONIDO</small></span></a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="nav" id="menu" aria-label="Principal">
+      <a href="#inspecciones">Inspecciones</a><a href="sobre-la-empresa/">Trayectoria</a><a href="equipamiento/">Equipamiento</a><a href="recursos/">Recursos</a>
+    </nav>
+    <a class="button header-cta" href="#contacto">Contacto</a>
+  </div>
+</header>
+<main id="contenido">
+  <section class="hero" aria-labelledby="titulo">
+    <div class="hero-media">
+      <video id="hero-film" muted loop playsinline preload="none" poster="assets/ferrocarril.webp" data-src="assets/ferrocarril.mp4" aria-hidden="true"></video>
+    </div>
+    <div class="shell hero-inner">
+      <p class="eyebrow"><span class="dash"></span> ENSAYOS NO DESTRUCTIVOS <span class="hero-slash">/</span> ARGENTINA</p>
+      <h1 id="titulo">Inspección por<br><em>ultrasonido.</em></h1>
+      <p class="hero-description">Ensayos de rieles, soldaduras y componentes metálicos. Experiencia de campo desde 1998.</p>
+      <div class="hero-actions"><a class="button solid" href="#inspecciones">Explorar inspecciones</a><a class="button ghost" href="#contacto">Consultar a Jorge</a></div>
+      <div class="hero-bottom"><span>SEI <span class="hero-slash">/</span> ARCHIVO FERROVIARIO</span><button class="film-toggle" type="button" aria-controls="hero-film" hidden><i aria-hidden="true"></i><span>Reproducir video</span></button></div>
+    </div>
+  </section>
+  <div class="ticker"><div class="shell ticker-inner"><span>Ferroviaria</span><span>Aeronáutica</span><span>Naval</span><span>Metalmecánica</span><span>Metalúrgica</span><span>Petróleo y gas</span></div></div>
+
+  <section class="services paper section" id="inspecciones" aria-labelledby="servicios-titulo">
+    <div class="shell">
+      <div class="section-heading"><div><p class="eyebrow"><span class="dash"></span> SERVICIOS</p><h2 id="servicios-titulo">Cada pieza.<br>Cada <em>indicación.</em></h2></div><p>Cuatro modalidades de inspección para explorar el interior del material, desde una soldadura puntual hasta kilómetros de vía en servicio.</p></div>
+      <div class="service-grid">
+        <a class="service-card featured" href="inspeccion-ferroviaria/"><img src="assets/rail-8.webp" alt="" width="960" height="720" loading="lazy"><div class="service-content"><span class="eyebrow">CONTROL CONTINUO DE RIELES</span><h3>Ferroviaria</h3><p>Exploración ultrasónica de rieles en servicio y piezas individuales.</p><span class="card-link">Ver inspección</span></div></a>
+        <a class="service-card" href="inspeccion-manual/"><img src="assets/manual-6.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">PIEZAS Y SOLDADURAS</span><h3>Manual</h3><p>Ensayos puntuales en componentes metálicos de distintas geometrías.</p><span class="card-link">Ver inspección</span></div></a>
+        <a class="service-card" href="inspeccion-automatica/"><img src="assets/auto-1.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">SOLDADURAS CIRCUNFERENCIALES</span><h3>Automática</h3><p>Ultrasonido con multipalpadores, Phased Array y ToFD.</p><span class="card-link">Ver inspección</span></div></a>
+        <a class="service-card" href="inspeccion-semi-automatica/"><img src="assets/semi-1.webp" alt="" width="850" height="600" loading="lazy"><div class="service-content"><span class="eyebrow">ACCESOS COMPLEJOS</span><h3>Semiautomática</h3><p>Barridos manuales con equipos de registro para soldaduras de cañerías.</p><span class="card-link">Ver inspección</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="capability section" aria-labelledby="capacidad-titulo">
+    <div class="shell capability-inner">
+      <div class="capability-text"><p class="eyebrow"><span class="dash"></span> TECNOLOGÍA DE INSPECCIÓN</p><h2 id="capacidad-titulo">Debajo de<br>la <em>superficie.</em></h2><p>El sistema continuo registra indicaciones a lo largo de la vía y permite documentar su ubicación y dimensiones para la evaluación técnica.</p><a class="button ghost" href="equipamiento/">Ver equipamiento</a></div>
+      <div class="instrument">
+        <div class="instrument-head"><span>CONTROL ULTRASÓNICO DE RIELES</span><span class="instrument-type">SEI / UT</span></div>
+        <canvas id="trace" width="880" height="240" aria-hidden="true"></canvas>
+        <div class="instrument-label">Representación gráfica de una señal ultrasónica</div>
+        <dl><div><dt>Canales de exploración</dt><dd>09</dd></div><div><dt>Ubicación de indicaciones</dt><dd>GPS</dd></div></dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper profile section" aria-labelledby="trayectoria-titulo">
+    <div class="shell profile-inner">
+      <figure><img src="assets/home-3.webp" alt="Archivo de trabajo de Jorge Flock" width="1050" height="780" loading="lazy"><figcaption>Archivo de campo · SEI</figcaption></figure>
+      <div><p class="eyebrow"><span class="dash"></span> JORGE FLOCK / SEI</p><h2 id="trayectoria-titulo">Experiencia<br><em>en terreno.</em></h2><p>Desde abril de 1998, Jorge Flock desarrolla procedimientos de exploración ultrasónica para equipos, vías y componentes industriales.</p><p>El trabajo abarca desde el control de materia prima hasta la evaluación de piezas terminadas o en servicio.</p><a class="button outline" href="sobre-la-empresa/">Conocer la trayectoria</a></div>
+    </div>
+    <div class="shell resource-rail"><a href="defectologia/"><span class="eyebrow">ARCHIVO TÉCNICO</span><strong>Defectología en rieles</strong><span class="card-link">Ver ejemplos</span></a><a href="recursos/"><span class="eyebrow">DOCUMENTACIÓN</span><strong>Recursos técnicos</strong><span class="card-link">Consultar documentos</span></a></div>
+  </section>
+
+  <section class="contact section" id="contacto" aria-labelledby="contacto-titulo">
+    <div class="shell contact-inner">
+      <div><p class="eyebrow"><span class="dash"></span> CONSULTAS TÉCNICAS</p><h2 id="contacto-titulo">Hablemos de<br>tu <em>inspección.</em></h2><p>Contanos qué pieza, soldadura o tramo necesitás evaluar y en qué ubicación.</p><div class="hero-actions"><a class="button solid" href="https://wa.me/5491157824853">Escribir por WhatsApp</a><a class="button ghost" href="mailto:jflock@hotmail.com">Enviar correo</a></div></div>
+      <dl class="contact-data"><div><dt>Teléfono</dt><dd><a href="tel:+5491157824853">+54 9 11 5782-4853</a></dd></div><div><dt>Correo</dt><dd><a href="mailto:jflock@hotmail.com">jflock@hotmail.com</a></dd></div><div><dt>Direcciones</dt><dd>Bacacay 5452, Ciudad de Buenos Aires<br>Euclides 3381, Bella Vista</dd></div></dl>
+      <details class="contact-form">
+        <summary>Preparar una consulta</summary>
+        <form id="consulta" action="https://wa.me/5491157824853" method="get">
+          <label for="mensaje">¿Qué necesitás inspeccionar?</label>
+          <textarea id="mensaje" name="text" rows="3" required placeholder="Pieza o tramo, ubicación y plazo estimado."></textarea>
+          <button class="button solid" type="submit">Abrir WhatsApp con el mensaje</button>
+        </form>
+      </details>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="shell"><a class="brand" href="./" aria-label="Jorge Flock, inicio"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-name">JORGE FLOCK</span></a><a href="https://www.ideamos.com.ar/">Diseño por Estudio Ideamos</a></div></footer>
+</body>
+</html>
