@@ -32,7 +32,7 @@ figure,p,h1,h2,h3,dl,dd{margin:0}
 .button.outline{border-color:#53564d;color:var(--ink)}
 .button.outline:hover{background:var(--ink);border-color:var(--ink);color:var(--light)}
 .hero{position:relative;isolation:isolate;overflow:hidden;background:#262c29}
-.hero-media{position:absolute;inset:0;z-index:-2;background:url(rail-dawn.webp) 56% 62%/cover no-repeat}
+.hero-media{position:absolute;inset:0;z-index:-2;background:url(rail-dawn.webp?v=detail) 56% 62%/cover no-repeat}
 .hero-media video{width:100%;height:100%;object-fit:cover;object-position:64% 57%;filter:saturate(.62) brightness(.91)}
 .hero::after,.detail-hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(90deg,#101312f5 0%,#101312c9 30%,#10131245 68%,#10131220 100%),linear-gradient(0deg,#101312e8 0%,transparent 25%,transparent 72%,#10131252 100%)}
 .hero-inner{position:relative;min-height:clamp(38rem,calc(85svh - 5.25rem),55rem);padding-top:clamp(5rem,11vh,9rem);padding-bottom:7rem;display:flex;align-items:flex-start;flex-direction:column;justify-content:center}
@@ -316,7 +316,7 @@ figcaption{margin-top:.66rem;color:#50564c}
   position: absolute;
   z-index: -1;
   inset: 0 50% 0 0;
-  background: linear-gradient(180deg, #161a16e3 0%, #161a16a3 60%, #161a16ed 100%), url(steel-motion.webp) 59% 61% / cover;
+  background: linear-gradient(180deg, #161a16e3 0%, #161a16a3 60%, #161a16ed 100%), url(steel-motion.webp?v=detail) 59% 61% / cover;
   mask-image: linear-gradient(90deg, #000 62%, transparent);
 }
 .home .contact-inner {
@@ -936,4 +936,23 @@ body:not(.marquees-running) .marquee-toggle i {
 }
 @media (prefers-reduced-motion: reduce) {
   .rail-replay { display: none; }
+}
+
+.rail-scene {
+  position: relative;
+  width: 100%;
+  max-width: 44rem;
+  margin: .65rem auto .7rem;
+  overflow: hidden;
+  border: 1px solid #acb8a645;
+}
+.rail-scene img { width: 100%; height: auto; }
+.rail-scene svg { position: absolute; inset: 0; margin: 0; width: 100%; height: 100%; }
+.rail-scene :is(.rail-label, .rail-annotation) text,
+.rail-scene .rail-annotation { paint-order: stroke; stroke: #171e19; stroke-width: 2.4; stroke-linejoin: round; }
+.rail-scene .rail-signal path { filter: drop-shadow(0 0 2px #191b15); }
+.rail-scene .rail-impact { fill: #422c1b; stroke: #ffd49c; stroke-width: 1.9; }
+.gallery img[src*="equipment-1.webp"] {
+  object-fit: contain;
+  background: #f7f6f0;
 }
