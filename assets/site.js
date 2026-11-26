@@ -74,3 +74,163 @@ if (trace) {
   }
   context.stroke();
 }
+
+const prefersLessMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if ('IntersectionObserver' in window && !prefersLessMotion.matches) {
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      if (entry.target.matches(':focus-within')) {
+        observer.unobserve(entry.target);
+        continue;
+      }
+      entry.target.classList.add('has-entered');
+      observer.unobserve(entry.target);
+    }
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('[data-reveal], .gallery figure, .detail-copy, .detail-aside').forEach((element) => {
+    observer.observe(element);
+  });
+}
+
+const progress = document.querySelector('.reading-progress');
+if (progress) {
+  let framePending = false;
+  const drawProgress = () => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = scrollHeight > 0 ? Math.min(1, window.scrollY / scrollHeight) : 0;
+    progress.style.transform = `scaleX(${ratio})`;
+    framePending = false;
+  };
+
+  const requestProgress = () => {
+    if (framePending) return;
+    framePending = true;
+    window.requestAnimationFrame(drawProgress);
+  };
+  window.addEventListener('scroll', requestProgress, { passive: true });
+  window.addEventListener('resize', requestProgress);
+  requestProgress();
+}
+
+const consultation = document.querySelector('#consulta');
+const preview = document.querySelector('#consulta-previa');
+
+if (consultation && preview && typeof preview.showModal === 'function') {
+  const nameInput = consultation.querySelector('#nombre');
+  const service = consultation.querySelector('#servicio');
+  const locationInput = consultation.querySelector('#ubicacion');
+  const message = consultation.querySelector('#mensaje');
+  const counter = consultation.querySelector('#contador');
+  const submit = consultation.querySelector('button[type="submit"]');
+  const previewSend = preview.querySelector('.preview-send');
+
+  nameInput.required = true;
+  service.required = true;
+  consultation.querySelectorAll('[data-enhanced]').forEach((element) => { element.hidden = false; });
+
+  const requestedService = new URLSearchParams(window.location.search).get('servicio');
+  if (requestedService && Array.from(service.options).some((option) => option.value === requestedService)) {
+    service.value = requestedService;
+  }
+
+  const updateCounter = () => {
+    counter.textContent = `${message.value.length} / ${message.maxLength}`;
+    counter.classList.toggle('is-near-limit', message.value.length >= message.maxLength - 40);
+  };
+
+  counter.hidden = false;
+  message.addEventListener('input', updateCounter);
+  updateCounter();
+
+  const wantsEmail = () => consultation.querySelector('input[name="canal"]:checked').value === 'email';
+  const updateChannel = () => { submit.textContent = wantsEmail() ? 'Revisar consulta para correo' : 'Revisar consulta para WhatsApp'; };
+  consultation.querySelector('.contact-channel').addEventListener('change', updateChannel);
+  updateChannel();
+
+  for (const field of [nameInput, message]) {
+    field.addEventListener('input', () => field.setCustomValidity(''));
+  }
+
+  consultation.addEventListener('submit', (event) => {
+    event.preventDefault();
+    for (const field of [nameInput, message]) {
+      if (!field.value.trim()) {
+        field.setCustomValidity('Completá este campo para continuar.');
+        field.reportValidity();
+        return;
+      }
+    }
+    const subject = service.selectedOptions[0].textContent;
+    const lines = [
+      'Hola, Jorge. Quisiera hacer una consulta técnica.',
+      `Nombre: ${nameInput.value.trim()}`,
+      `Inspección: ${subject}`
+    ];
+    if (locationInput.value.trim()) lines.push(`Ubicación: ${locationInput.value.trim()}`);
+    lines.push('', message.value.trim());
+    const body = lines.join('\n');
+    const encodedBody = encodeURIComponent(body);
+    const email = wantsEmail();
+
+    preview.querySelector('#previa-mensaje').textContent = body;
+    previewSend.textContent = email ? 'Abrir correo' : 'Abrir WhatsApp';
+    previewSend.href = email
+      ? `mailto:jflock@hotmail.com?subject=${encodeURIComponent('Consulta técnica · ' + subject)}&body=${encodedBody}`
+      : `https://wa.me/5491157824853?text=${encodedBody}`;
+    previewSend.target = email ? '_self' : '_blank';
+    preview.showModal();
+  });
+
+  preview.querySelectorAll('button').forEach((button) => button.addEventListener('click', () => preview.close()));
+  previewSend.addEventListener('click', () => preview.close());
+}
+
+const gallery = document.querySelector('.gallery-grid');
+if (gallery && 'HTMLDialogElement' in window && 'showModal' in HTMLDialogElement.prototype) {
+  const photos = Array.from(gallery.querySelectorAll('figure a'));
+  if (photos.length) {
+    const viewer = document.createElement('dialog');
+    viewer.className = 'gallery-viewer';
+    viewer.setAttribute('aria-labelledby', 'foto-archivo');
+    viewer.innerHTML = `
+      <div class="dialog-top"><h3 id="foto-archivo">Archivo fotográfico</h3><button type="button" class="dialog-close" aria-label="Cerrar foto">×</button></div>
+      <figure><img alt=""><figcaption aria-live="polite"></figcaption></figure>
+      <div class="gallery-controls"><button type="button">Anterior</button><span></span><button type="button">Siguiente</button></div>`;
+    gallery.after(viewer);
+
+    const fullPhoto = viewer.querySelector('img');
+    const caption = viewer.querySelector('figcaption');
+    const controls = viewer.querySelector('.gallery-controls');
+    const [previous, next] = controls.querySelectorAll('button');
+    const position = controls.querySelector('span');
+    let index = 0;
+
+    const showPhoto = (requestedIndex) => {
+      index = (requestedIndex + photos.length) % photos.length;
+      const photo = photos[index];
+      caption.textContent = photo.closest('figure').querySelector('figcaption').textContent;
+      fullPhoto.src = photo.href;
+      position.textContent = `${index + 1} / ${photos.length}`;
+    };
+
+    controls.hidden = photos.length < 2;
+    photos.forEach((photo, photoIndex) => {
+      photo.addEventListener('click', (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        showPhoto(photoIndex);
+        viewer.showModal();
+      });
+    });
+    viewer.querySelector('.dialog-close').addEventListener('click', () => viewer.close());
+    previous.addEventListener('click', () => showPhoto(index - 1));
+    next.addEventListener('click', () => showPhoto(index + 1));
+    viewer.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') showPhoto(index - 1);
+      if (event.key === 'ArrowRight') showPhoto(index + 1);
+    });
+  }
+}
