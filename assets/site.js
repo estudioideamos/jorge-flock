@@ -173,18 +173,36 @@ if ('IntersectionObserver' in window && !prefersLessMotion.matches) {
     }
   }, { threshold: 0.08 });
 
-  document.querySelectorAll('[data-reveal], .gallery figure, .detail-copy, .detail-aside').forEach((element) => {
+  document.querySelectorAll('[data-reveal], .gallery figure, .editorial-detail').forEach((element) => {
     observer.observe(element);
   });
 }
 
 const progress = document.querySelector('.reading-progress');
 if (progress) {
+  const sections = Array.from(document.querySelectorAll('.detail-section-nav a'), link => ({
+    link,
+    target: document.getElementById(link.hash.slice(1))
+  })).filter(section => section.target);
+  const sectionBar = document.querySelector('.detail-section-bar');
+  let activeSection = null;
   let framePending = false;
   const drawProgress = () => {
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const ratio = scrollHeight > 0 ? Math.min(1, window.scrollY / scrollHeight) : 0;
     progress.style.transform = `scaleX(${ratio})`;
+
+    if (sectionBar && sections.length) {
+      const stickyArea = sectionBar.getBoundingClientRect().height;
+      const anchorMargin = Number.parseFloat(getComputedStyle(sections[0].target).scrollMarginTop);
+      const offset = Math.max(stickyArea + 12, anchorMargin + 4);
+      const current = sections.findLast(section => section.target.getBoundingClientRect().top <= offset);
+      if (current?.link !== activeSection) {
+        activeSection?.removeAttribute('aria-current');
+        activeSection = current?.link;
+        activeSection?.setAttribute('aria-current', 'location');
+      }
+    }
     framePending = false;
   };
 

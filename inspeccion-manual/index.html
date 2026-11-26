@@ -6,8 +6,8 @@
   <meta name="description" content="Ensayos puntuales de piezas metálicas, soldaduras y componentes aeronáuticos.">
   <meta name="theme-color" content="#151817">
   <link rel="icon" href="../assets/marca.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/site.css?v=flock-field">
-  <script src="../assets/site.js?v=flock-field" defer></script>
+  <link rel="stylesheet" href="../assets/site.css?v=flock-editorial-internas">
+  <script src="../assets/site.js?v=flock-editorial-internas" defer></script>
   <title>Inspección manual · Jorge Flock SEI</title>
 </head>
 <body class="internal">
@@ -31,12 +31,18 @@
 </header>
 
 <main id="contenido">
-  <section class="detail-hero" style="background-image:url(../assets/manual-probe.webp?v=detail)">
-    <div class="shell internal-hero-inner">
-      <svg class="internal-hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M6 15h12M10 12l5-5 3 3-5 5M15 7l3-4h3M8 10l-2 2m2-6-4 4"/></svg>
-      <p class="breadcrumb"><a href="../">Inicio</a> <span class="hero-slash">/</span> Inspecciones</p>
-      <h1>Inspección manual</h1><p>Ensayos puntuales de piezas metálicas, soldaduras y componentes aeronáuticos.</p>
-      <p class="detail-visual-credit">Imagen ilustrativa</p>
+  <section class="editorial-hero" aria-labelledby="pagina-titulo">
+    <div class="shell editorial-hero-layout">
+      <div class="editorial-heading">
+        <p class="breadcrumb"><a href="../">Inicio</a> <span class="hero-slash">/</span> Inspecciones</p>
+        <h1 id="pagina-titulo"><span>Inspección</span> <em>manual</em></h1>
+        <p class="editorial-deck">Ensayos puntuales de piezas metálicas, soldaduras y componentes aeronáuticos.</p>
+        <a class="editorial-hero-link" href="#esquema">Ver el recorrido del pulso</a>
+      </div>
+      <figure class="editorial-cover editorial-cover-inspeccion-manual">
+        <div class="editorial-cover-frame"><img src="../assets/manual-probe.webp?v=detail" alt="" fetchpriority="high" decoding="async"></div>
+        <figcaption>Recreación de un ensayo con palpador</figcaption>
+      </figure>
     </div>
   </section>
   <div class="detail-section-bar">
@@ -44,10 +50,12 @@
       <a href="#esquema">Esquema interactivo</a>
       <a href="#detalle">Detalles técnicos</a>
       <a href="#galeria">Archivo fotográfico</a>
+      <a href="#consulta-tecnica">Consulta</a>
     </nav>
   </div>
   <div class="detail-body paper">
     <div class="shell">
+      <dl class="editorial-facts" aria-label="Alcance de la inspección"><div><dt>Piezas metálicas</dt><dd>Ejes, chapas, bridas y forjados</dd></div><div><dt>Soldaduras</dt><dd>Control según el código aplicable</dd></div><div><dt>Aeronáutica</dt><dd>Componentes y estructuras</dd></div></dl>
       <section class="tech-panel cutaway-panel" id="esquema" data-tech-panel aria-labelledby="grafico-titulo">
   <div class="tech-graphic cutaway-graphic" data-tech-view>
     <p class="rail-view-label">PIEZA METÁLICA · CORTE DIDÁCTICO</p>
@@ -75,17 +83,17 @@
     <small>Reconstrucción 3D didáctica · Señales y recorridos ilustrativos.</small>
   </div>
 </section>
-      <div class="detail-intro" id="detalle">
-        <article class="detail-copy"><h2>Control de piezas y soldaduras</h2><p>La inspección manual se adapta a la geometría y a la etapa de fabricación de cada pieza. Puede aplicarse a ejes ferroviarios e industriales, chapas, bridas, tapas, ganchos, forjados y laminados.</p>
+      <article class="editorial-detail" id="detalle" aria-labelledby="detalle-titulo">
+        <header><h2 id="detalle-titulo">Control de piezas y soldaduras</h2></header>
+        <div class="editorial-prose"><p>La inspección manual se adapta a la geometría y a la etapa de fabricación de cada pieza. Puede aplicarse a ejes ferroviarios e industriales, chapas, bridas, tapas, ganchos, forjados y laminados.</p>
 <h3>Estructuras aeronáuticas</h3><p>Experiencia en trenes de aterrizaje, ejes de flaps, actuadores, agujeros de bulones de hélices y estructuras de turbinas. El archivo de trabajo incluye procedimientos para Boeing 737, Boeing 747 y Saab 340.</p>
 <h3>Soldaduras</h3><ul>
 <li>Recipientes de alta presión para petróleo, bajo código ASME.</li>
 <li>Soldaduras aluminotérmicas de rieles, bajo FA 7001.</li>
 <li>Soldaduras circunferenciales y helicoidales de gasoductos, bajo API 1104.</li>
 <li>Vigas carrileras y empalmes de perfiles, bajo AWS D1.1.</li>
-</ul></article>
-        <aside class="detail-aside"><p class="eyebrow"><span class="dash"></span> CONSULTAS TÉCNICAS</p><p>Contanos qué necesitás inspeccionar y dónde se realizará el trabajo.</p><a class="button outline" href="../?servicio=manual#contacto">Preparar consulta</a></aside>
-      </div>
+</ul></div>
+      </article>
       <section class="gallery" aria-labelledby="galeria">
         <div class="gallery-header">
           <h2 id="galeria"><svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="m4 17 5-6 4 4 3-3 4 5"/><circle cx="16" cy="8" r="1"/></svg>Archivo fotográfico</h2>
@@ -100,6 +108,14 @@
 <figure><a href="../assets/manual-3.webp?v=detail" aria-label="Ampliar foto de archivo: Archivo de trabajo en la industria del petróleo"><img src="../assets/manual-3.webp?v=detail" alt="" width="1200" height="900" loading="lazy"></a><figcaption>Archivo de trabajo en la industria del petróleo</figcaption></figure></div></section>
     </div>
   </div>
+  <section class="editorial-close" id="consulta-tecnica" aria-labelledby="consulta-titulo">
+    <div class="shell editorial-close-layout">
+      <div><p class="eyebrow"><span class="dash"></span> CONSULTAS TÉCNICAS</p><h2 id="consulta-titulo">Contanos qué pieza necesitás evaluar.</h2>
+        <a class="button ghost" href="../?servicio=manual#contacto">Preparar consulta</a>
+      </div>
+      <nav aria-label="Páginas relacionadas"><h3>También podés consultar</h3><ul><li><a href="../inspeccion-automatica/">Inspección automática de cañerías</a></li><li><a href="../inspeccion-semi-automatica/">Inspección en accesos complejos</a></li></ul></nav>
+    </div>
+  </section>
 </main>
 <footer class="footer">
   <div class="shell footer-inner">
