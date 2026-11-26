@@ -2,17 +2,33 @@ const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#menu');
 
 if (menuToggle && nav) {
-  const closeMenu = () => menuToggle.setAttribute('aria-expanded', 'false');
+  nav.closest('.masthead').dataset.navReady = '';
+  const inspections = nav.querySelector('.nav-inspections');
+  const closeMenu = () => {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    if (inspections) inspections.open = false;
+  };
+
+  document.addEventListener('click', (event) => {
+    if (inspections?.open && !inspections.contains(event.target)) inspections.open = false;
+  });
 
   menuToggle.addEventListener('click', () => {
     const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    if (isOpen) closeMenu();
+    else menuToggle.setAttribute('aria-expanded', 'true');
   });
   nav.addEventListener('click', (event) => {
     if (event.target.closest('a')) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+    if (event.key !== 'Escape') return;
+    if (inspections?.open && inspections.contains(document.activeElement)) {
+      inspections.open = false;
+      inspections.querySelector('summary').focus();
+      return;
+    }
+    if (menuToggle.getAttribute('aria-expanded') === 'true') {
       closeMenu();
       menuToggle.focus();
     }
@@ -279,3 +295,25 @@ if (gallery && 'HTMLDialogElement' in window && 'showModal' in HTMLDialogElement
     });
   }
 }
+
+document.querySelectorAll('[data-tech-panel]').forEach((panel) => {
+  const graphic = panel.querySelector('[data-tech-view]');
+  const options = panel.querySelector('.tech-options');
+  const notes = panel.querySelectorAll('[data-tech-note]');
+  const buttons = options.querySelectorAll('[data-tech-step]');
+
+  const show = (stage) => {
+    graphic.dataset.stage = stage;
+    for (const button of buttons) {
+      button.setAttribute('aria-pressed', String(button.dataset.techStep === stage));
+    }
+    for (const note of notes) note.hidden = note.dataset.techNote !== stage;
+  };
+
+  options.addEventListener('click', (event) => {
+    const selected = event.target.closest('[data-tech-step]');
+    if (selected) show(selected.dataset.techStep);
+  });
+  show(buttons[0].dataset.techStep);
+  options.hidden = false;
+});
