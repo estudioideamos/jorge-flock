@@ -37,6 +37,15 @@ if (menuToggle && nav) {
 
 const prefersLessMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+const floatingWhatsApp = document.querySelector('.whatsapp-float');
+const siteFooter = document.querySelector('.footer');
+if (floatingWhatsApp && siteFooter && 'IntersectionObserver' in window) {
+  const footerObserver = new IntersectionObserver(([entry]) => {
+    floatingWhatsApp.hidden = entry.isIntersecting;
+  });
+  footerObserver.observe(siteFooter);
+}
+
 document.querySelectorAll('.film-toggle').forEach((control) => {
   const video = document.getElementById(control.getAttribute('aria-controls'));
   if (!video) return;
