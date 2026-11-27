@@ -903,8 +903,7 @@ body:not(.marquees-running) .marquee-toggle i {
   .cutaway-graphic { min-height: 0; border-right: 0; border-bottom: 1px solid #acb8a642; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .cutaway-graphic[data-stage="1"] [data-layer="1"] .cutaway-travel,
-  .cutaway-graphic[data-stage="2"] [data-layer="2"] .cutaway-travel {
+  .cutaway-graphic[data-stage="1"] [data-layer="1"] .cutaway-travel {
     stroke-dasharray: 100;
     animation: rail-pulse .9s var(--motion) both;
   }
@@ -2337,4 +2336,35 @@ body:not(.marquees-running) .marquee-toggle i {
 @keyframes editorial-document-opening {
   from { transform: translateY(2rem) scale(.93); }
   to { transform: none; }
+}
+
+/* A highlight travels over the plotted echo while its shape stays readable. */
+.echo-highlight {
+  fill: none;
+  stroke: #fff1b8;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-dasharray: 12 100;
+  opacity: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cutaway-graphic[data-stage="2"] [data-layer="2"] .echo-highlight,
+  .record-panel.has-entered .echo-highlight {
+    animation: echo-sweep 1.8s .12s linear 2 forwards;
+  }
+}
+@keyframes echo-sweep {
+  0% { stroke-dashoffset: 12; opacity: .9; }
+  85% { opacity: .9; }
+  100% { stroke-dashoffset: -100; opacity: 0; }
+}
+.internal .cutaway-panel .rail-replay {
+  color: #654026;
+  background: #f4ece0;
+  border-color: #bca98d;
+}
+.internal .cutaway-panel .rail-replay:is(:hover, :focus-visible) {
+  color: #fff6e7;
+  background: var(--editorial-dark);
 }

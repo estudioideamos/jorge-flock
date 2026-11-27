@@ -146,6 +146,24 @@ if (trace) {
     { position: '42%', text: 'Eco ilustrativo. La separación entre los picos representa el tiempo que tarda en volver la señal.' }
   ];
 
+  const playTrace = () => {
+    if (prefersLessMotion.matches || !trace.animate) return;
+    for (const animation of trace.getAnimations()) animation.cancel();
+    trace.animate(
+      [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0)' }],
+      { duration: 1250, easing: 'ease-out' }
+    );
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      playTrace();
+      observer.disconnect();
+    }, { threshold: 0.35 });
+    observer.observe(trace);
+  }
+
   steps.addEventListener('click', (event) => {
     const button = event.target.closest('[data-trace-step]');
     if (!button) return;
@@ -156,6 +174,7 @@ if (trace) {
     cursor.hidden = false;
     cursor.style.left = reading.position;
     explanation.textContent = reading.text;
+    playTrace();
   });
   steps.hidden = false;
 }
@@ -359,7 +378,10 @@ document.querySelectorAll('[data-tech-panel]').forEach((panel) => {
 
   if (replay) {
     replay.addEventListener('click', () => {
-      for (const animation of graphic.getAnimations({ subtree: true })) animation.currentTime = 0;
+      for (const animation of graphic.getAnimations({ subtree: true })) {
+        animation.currentTime = 0;
+        animation.play();
+      }
     });
     prefersLessMotion.addEventListener('change', updateReplay);
   }
