@@ -265,13 +265,13 @@ figcaption{margin-top:.66rem;color:#50564c}
 }
 
 /* Contact and reading overlays */
-.home .contact {
+.contact {
   position: relative;
   isolation: isolate;
   overflow: clip;
   background: #1b201c;
 }
-.home .contact::before {
+.contact::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -279,7 +279,7 @@ figcaption{margin-top:.66rem;color:#50564c}
   background: linear-gradient(180deg, #161a16e3 0%, #161a16a3 60%, #161a16ed 100%), url(steel-motion.webp?v=detail) 59% 61% / cover;
   mask-image: linear-gradient(90deg, #000 62%, transparent);
 }
-.home .contact-inner {
+.contact-inner {
   grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
   align-items: start;
   gap: clamp(2.4rem, 6vw, 6rem);
@@ -289,7 +289,7 @@ figcaption{margin-top:.66rem;color:#50564c}
 .contact-editorial > p:not(.eyebrow) { color: #e2e1d5; max-width: 25rem; }
 .contact-editorial dl { margin-top: 2.8rem; max-width: 28rem; }
 .contact-editorial dd { margin-top: .25rem; font-size: .97rem; }
-.home .contact-form, .consultation-dialog {
+.contact-form, .consultation-dialog {
   --form-ink: #21251f;
   --form-paper: #f0ebe0;
   --form-line: #9b9888;
@@ -297,14 +297,14 @@ figcaption{margin-top:.66rem;color:#50564c}
   color: var(--form-ink);
   background: var(--form-paper);
 }
-.home .contact-form {
+.contact-form {
   position: relative;
   min-width: 0;
   padding: clamp(1.45rem, 4vw, 4rem);
   border: 1px solid #faf3dd;
   box-shadow: 0 1.4rem 5rem #090d095c;
 }
-.home .contact-form::before {
+.contact-form::before {
   position: absolute;
   inset: 0 auto auto 0;
   width: 5.4rem;
@@ -393,7 +393,7 @@ figcaption{margin-top:.66rem;color:#50564c}
 .contact-submit .button, .preview-send { background: #263027; color: #fff7e7; border-color: #263027; }
 .contact-submit .button { cursor: pointer; width: 100%; min-height: 3.35rem; }
 .contact-submit .button:hover, .preview-send:hover { background: #3c4b3e; color: #fff7e7; border-color: #3c4b3e; }
-.home .contact-form .contact-submit p { font-size: .78rem; line-height: 1.4; color: #535347; margin: .62rem 0 0; }
+.contact-form .contact-submit p { font-size: .78rem; line-height: 1.4; color: #535347; margin: .62rem 0 0; }
 .consultation-dialog, .gallery-viewer {
   border: 1px solid #c8bda7;
   padding: clamp(1.2rem, 4vw, 2.1rem);
@@ -446,14 +446,14 @@ body:has(dialog[open]) { overflow: hidden; }
 .gallery-controls span { font: 550 .8125rem/1 var(--sans); font-variant-numeric: tabular-nums; }
 
 @media (max-width: 835px) {
-  .home .contact-inner { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
-  .home .contact::before { inset: 0 0 52%; mask-image: linear-gradient(#000 30%, transparent); }
+  .contact-inner { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
+  .contact::before { inset: 0 0 52%; mask-image: linear-gradient(#000 30%, transparent); }
   .contact-editorial dl { margin-top: 1.7rem; }
-  .home .contact-form { max-width: 43rem; }
+  .contact-form { max-width: 43rem; }
 }
 @media (max-width: 460px) {
   .contact-fields { grid-template-columns: 1fr; gap: .94rem; }
-  .home .contact-form { padding: 1.24rem; }
+  .contact-form { padding: 1.24rem; }
   .hero .hero-description { max-width: 21rem; }
 }
 
@@ -1390,7 +1390,7 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
 .internal .detail-section-bar { position: sticky; top: 0; z-index: 2; }
 .detail-section-nav a[aria-current=location] { color: var(--accent); }
 .detail-section-nav a[aria-current=location]::after { transform: scaleX(1); }
-.internal :is(#esquema, #detalle, #galeria, #trayectoria, #documentos, #consulta-tecnica) { scroll-margin-top: 4.5rem; }
+.internal :is(#esquema, #detalle, #galeria, #trayectoria, #documentos, #contacto, #consulta-tecnica) { scroll-margin-top: 4.5rem; }
 .internal .detail-body { padding-block: clamp(1.6rem, 4.6vw, 4.65rem); }
 .editorial-facts {
   display: grid;
@@ -1459,12 +1459,12 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
   text-transform: none;
 }
 .editorial-close .button { min-height: 2.65rem; }
-.editorial-close nav h3 { font: .8rem/1.3 var(--sans); letter-spacing: .045em; color: #e3c59a; }
-.editorial-close nav ul { padding: 0; margin: .55rem 0 0; list-style: none; }
-.editorial-close nav li { border-top: 1px solid #d9c5a954; }
-.editorial-close nav li:last-child { border-bottom: 1px solid #d9c5a954; }
-.editorial-close nav a { display: block; padding: .45rem 0; font-size: .9rem; }
-.editorial-close nav a:hover { color: var(--accent); }
+.contact-related h3 { font: .8rem/1.3 var(--sans); letter-spacing: .045em; color: #e3c59a; }
+.contact-related ul { padding: 0; margin: .55rem 0 0; list-style: none; }
+.contact-related li { border-top: 1px solid #d9c5a954; }
+.contact-related li:last-child { border-bottom: 1px solid #d9c5a954; }
+.contact-related a { display: block; padding: .45rem 0; font-size: .9rem; }
+.contact-related a:hover { color: var(--accent); }
 
 @media (max-width: 800px) {
   .editorial-hero-layout { grid-template-columns: 1fr; gap: 1.45rem; }
@@ -1477,7 +1477,7 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
   .editorial-facts { grid-template-columns: 1fr; }
   .editorial-facts > div { padding: .55rem 0; }
   .editorial-facts > div + div { border-left: 0; border-top: 1px solid var(--paper-line); }
-  .internal :is(#esquema, #detalle, #galeria, #trayectoria, #documentos, #consulta-tecnica) { scroll-margin-top: 6.2rem; }
+  .internal :is(#esquema, #detalle, #galeria, #trayectoria, #documentos, #contacto, #consulta-tecnica) { scroll-margin-top: 6.2rem; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .editorial-heading h1 { animation: editorial-enter .76s var(--motion) both; }
@@ -1964,7 +1964,7 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
   width: 1.18rem;
   height: 1.18rem;
 }
-.editorial-close nav a:focus-visible, .editorial-close nav a:hover { color: #ffcf94; }
+.contact-related a:focus-visible, .contact-related a:hover { color: #ffcf94; }
 .publication { border-radius: .4rem; overflow: clip; }
 .publication-action { display: inline-flex; gap: .32rem; align-items: center; }
 .publication-action .tech-icon { width: 1rem; height: 1rem; }
@@ -2053,14 +2053,14 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
   background: #efe4d0;
   color: var(--rust);
 }
-.home .contact-form {
+.contact-form {
   border: 1px solid #ba9d75;
   border-radius: .45rem;
   background: linear-gradient(145deg, #faf5e9, #efe6d6);
 }
-.home .contact-form::before { border-top-left-radius: .45rem; }
-.home .contact-form h3 { display: flex; align-items: center; gap: .65rem; }
-.home .contact-form h3 .tech-icon {
+.contact-form::before { border-top-left-radius: .45rem; }
+.contact-form h3 { display: flex; align-items: center; gap: .65rem; }
+.contact-form h3 .tech-icon {
   width: 2.7rem;
   height: 2.7rem;
   padding: .47rem;
@@ -2068,11 +2068,11 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
   border-radius: .28rem;
   color: var(--rust);
 }
-.home .field :is(input, select, textarea) {
+.field :is(input, select, textarea) {
   border: 1px solid #b3a58e;
   border-radius: .26rem;
 }
-.home .field :is(input, select, textarea):focus {
+.field :is(input, select, textarea):focus {
   border-color: var(--form-accent);
   box-shadow: 0 0 0 2px #94533033;
 }
@@ -2571,3 +2571,13 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
 @media (max-width: 600px) {
   .gallery-viewer[open] { height: min(calc(100dvh - 1.25rem), 31rem); }
 }
+
+.contact-related {
+  margin-top: clamp(2rem, 5vw, 4.5rem);
+}
+.contact-related ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: .6rem 1.5rem;
+}
+.contact-related li:last-child { border-bottom: 0; }
