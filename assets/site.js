@@ -53,6 +53,7 @@ document.querySelectorAll('.film-toggle').forEach((control) => {
   const label = control.querySelector('span');
   const canObserve = 'IntersectionObserver' in window;
   let isVisible = !canObserve;
+  let canAutoplay = video.id !== 'hero-film' || document.readyState === 'complete';
   let wantsPlayback = video.hasAttribute('data-autoplay') && !prefersLessMotion.matches && !navigator.connection?.saveData;
 
   const updateControl = () => {
@@ -62,7 +63,7 @@ document.querySelectorAll('.film-toggle').forEach((control) => {
   };
 
   const syncPlayback = () => {
-    if (!isVisible || !wantsPlayback) {
+    if (!isVisible || !wantsPlayback || !canAutoplay) {
       video.pause();
       return;
     }
@@ -70,11 +71,19 @@ document.querySelectorAll('.film-toggle').forEach((control) => {
     video.play().catch(updateControl);
   };
 
+  if (!canAutoplay) {
+    window.addEventListener('load', () => {
+      canAutoplay = true;
+      syncPlayback();
+    }, { once: true });
+  }
+
   control.hidden = false;
   updateControl();
   video.addEventListener('playing', updateControl);
   video.addEventListener('pause', updateControl);
   control.addEventListener('click', () => {
+    canAutoplay = true;
     wantsPlayback = video.paused;
     syncPlayback();
   });
@@ -365,6 +374,12 @@ if (gallery && 'HTMLDialogElement' in window && 'showModal' in HTMLDialogElement
       });
     });
     viewer.querySelector('.dialog-close').addEventListener('click', () => viewer.close());
+    viewer.addEventListener('click', (event) => {
+      if (event.target !== viewer) return;
+      const bounds = viewer.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) viewer.close();
+    });
     previous.addEventListener('click', () => showPhoto(index - 1));
     next.addEventListener('click', () => showPhoto(index + 1));
     viewer.addEventListener('keydown', (event) => {
