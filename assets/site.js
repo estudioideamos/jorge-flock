@@ -215,6 +215,33 @@ if ('IntersectionObserver' in window && !prefersLessMotion.matches) {
   });
 }
 
+const kilometerCount = document.querySelector('[data-kilometer-count]');
+if (kilometerCount && 'IntersectionObserver' in window && !prefersLessMotion.matches) {
+  const target = Number(kilometerCount.dataset.kilometerCount);
+  const original = kilometerCount.textContent;
+  const formatter = new Intl.NumberFormat('es-AR');
+  const duration = 1600;
+  const observer = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    observer.disconnect();
+    const start = performance.now();
+
+    const count = (time) => {
+      const progress = Math.min(Math.max((time - start) / duration, 0), 1);
+      if (prefersLessMotion.matches || progress === 1) {
+        kilometerCount.textContent = original;
+        return;
+      }
+      const value = Math.round(target * (1 - (1 - progress) ** 3));
+      kilometerCount.textContent = '+' + formatter.format(value);
+      requestAnimationFrame(count);
+    };
+
+    requestAnimationFrame(count);
+  }, { threshold: 0.45 });
+  observer.observe(kilometerCount);
+}
+
 const progress = document.querySelector('.reading-progress');
 if (progress) {
   const sections = Array.from(document.querySelectorAll('.detail-section-nav a'), link => ({
