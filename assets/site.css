@@ -2581,3 +2581,47 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
   gap: .6rem 1.5rem;
 }
 .contact-related li:last-child { border-bottom: 0; }
+
+.contact-data > div {
+  position: relative;
+  min-height: 4.65rem;
+  padding-block: .85rem;
+  padding-inline-start: clamp(3.1rem, 4.4vw, 3.85rem);
+}
+.contact-data-icon {
+  position: absolute;
+  inset-block-start: .85rem;
+  inset-inline-start: 0;
+  width: clamp(2.3rem, 3.35vw, 2.8rem);
+  height: clamp(2.3rem, 3.35vw, 2.8rem);
+  padding: .55rem;
+  border: 1px solid #dfb68575;
+  border-radius: .46rem;
+  background: #222821;
+  color: #ffd5a7;
+}
+.contact-data dt {
+  color: #efd2ad;
+  font-weight: 650;
+}
+.contact-editorial .contact-data dd {
+  color: #f4eee5;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+.contact-data .contact-phone { align-items: center; gap: .35rem .85rem; }
+.contact-data .contact-direct {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.85rem;
+  padding-inline: .6rem;
+  border: 1px solid #dfb68575;
+  border-radius: 99px;
+  background: #222821;
+  text-decoration: none;
+}
+.contact-data .contact-direct:is(:hover, :focus-visible) {
+  border-color: #ffd5a7;
+  background: #ffd5a7;
+  color: #252019;
+}
