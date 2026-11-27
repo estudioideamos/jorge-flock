@@ -16,7 +16,7 @@ figure,p,h1,h2,h3,dl,dd{margin:0}
 .masthead{position:relative;z-index:3;background:#151816;border-bottom:1px solid #ffffff1c}
 .header-inner{min-height:5.25rem;display:grid;grid-template-columns:1fr auto 1fr;gap:1.6rem;align-items:center}
 .brand{display:inline-flex;align-items:center;width:max-content;line-height:1}
-.brand-logo{width:clamp(4rem,6.5vw,5.6rem);height:auto;flex:none}
+.brand-logo{width:clamp(4.5rem,7.5vw,6.4rem);height:auto;flex:none}
 .nav{display:flex;gap:clamp(1.2rem,2.65vw,3.1rem);align-items:center;justify-content:center;color:#e0e2d9;font-size:.9rem;font-weight:650}
 .nav a:hover,.nav a[aria-current]{color:var(--accent)}
 .menu-toggle{display:none}
