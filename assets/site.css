@@ -2261,3 +2261,34 @@ body:not(.marquees-running) .marquee-toggle i {
   }
   .editorial-hero .editorial-cover figcaption { padding: .65rem 1.25rem .85rem; }
 }
+
+/* Scroll-driven editorial covers */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .editorial-hero[data-cover-motion] { view-timeline-name: --editorial-cover; }
+    .editorial-hero-photo[data-cover-motion] .editorial-cover-frame > img {
+      animation: editorial-photo-drift linear both;
+      animation-timeline: --editorial-cover;
+      animation-range: exit 0% exit 100%;
+    }
+    .editorial-hero[data-cover-motion] .editorial-cover-documents > img {
+      animation: editorial-document-drift linear both;
+      animation-timeline: --editorial-cover;
+      animation-range: exit 0% exit 100%;
+    }
+    .editorial-hero[data-cover-motion] .editorial-cover-documents > img:first-child {
+      --document-drift: 2rem;
+    }
+    .editorial-hero[data-cover-motion] .editorial-cover-documents > img:last-child {
+      --document-drift: 1rem;
+    }
+  }
+}
+@keyframes editorial-photo-drift {
+  from { transform: scale(1); }
+  to { transform: translateY(5%) scale(1.14); }
+}
+@keyframes editorial-document-drift {
+  from { translate: 0 0; }
+  to { translate: 0 var(--document-drift); }
+}
