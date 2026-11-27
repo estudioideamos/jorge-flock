@@ -1750,19 +1750,42 @@ body:not(.marquees-running) .marquee-toggle i {
   isolation: isolate;
   background: radial-gradient(ellipse at 16% 20%, #2a3528, var(--cover-shadow) 72%);
 }
-.editorial-heading .breadcrumb { position: relative; padding-left: 3.65rem; min-height: 2.9rem; align-content: center; }
+.editorial-heading .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: clamp(.55rem, 1.1vw, .85rem);
+  letter-spacing: .065em;
+}
 .editorial-emblem {
-  position: absolute;
-  inset: 50% auto auto 0;
-  translate: 0 -50%;
-  width: 2.85rem;
-  height: 2.85rem;
-  padding: .54rem;
+  display: block;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: .41rem;
   color: #ffd4a1;
   background: #292e24;
-  border: 1px solid #be9d6e8c;
+  border: 1px solid #be9d6e73;
   border-radius: .3rem;
 }
+.breadcrumb-trail {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  min-width: 0;
+}
+.breadcrumb-trail a {
+  flex: none;
+  color: #d6cfbf;
+  text-decoration: none;
+  transition: color .2s;
+}
+.breadcrumb-trail a:is(:hover, :focus-visible) {
+  color: #fff2df;
+  text-decoration: underline;
+}
+.breadcrumb-trail .hero-slash { flex: none; margin: 0; color: #d1a979; }
+.breadcrumb-topic { color: #f5e1c4; }
+.editorial-heading .breadcrumb + h1 { margin-top: clamp(.85rem, 1.4vw, 1.15rem); }
 .editorial-heading h1 { overflow-wrap: normal; }
 .editorial-heading h1 em { color: #ffd6a8; }
 .editorial-deck { color: #eeebde; }
@@ -1842,7 +1865,8 @@ body:not(.marquees-running) .marquee-toggle i {
     box-shadow: 0 .55rem 1.3rem #0c120d60;
   }
   .editorial-heading h1 span { font-size: .95em; }
-  .editorial-hero .breadcrumb { letter-spacing: .045em; }
+  .editorial-heading .breadcrumb { letter-spacing: .045em; }
+  .breadcrumb-trail { gap: .48rem; }
 }
 @media (max-width: 390px) {
   .editorial-heading h1 { font-size: clamp(2.4rem, 12vw, 3.3rem); }
@@ -1943,7 +1967,7 @@ body:not(.marquees-running) .marquee-toggle i {
 .nav-option-icon { border-color: #c6a2766e; border-radius: .27rem; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .editorial-heading .editorial-emblem { animation: editorial-enter .55s var(--motion) both; }
+  .editorial-heading .breadcrumb { animation: editorial-enter .55s var(--motion) both; }
   .home .service-content h3 .tech-icon { transition: color .25s, background .25s; }
 }
 
