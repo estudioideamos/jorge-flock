@@ -127,8 +127,20 @@ figcaption{margin-top:.66rem;color:#50564c}
 .footer-credit:hover, .footer-credit:focus-visible { color: var(--accent); }
 .footer-credit:hover img { transform: translateX(.2rem); }
 @media (max-width: 600px) {
-  .footer-inner { flex-direction: column; align-items: stretch; gap: 1.3rem; }
-  .footer-credit { width: fit-content; max-width: 100%; }
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.35rem;
+    padding-block: 1.8rem calc(1.9rem + env(safe-area-inset-bottom, 0px));
+  }
+  .footer-credit {
+    flex-direction: column;
+    gap: .4rem;
+    width: fit-content;
+    max-width: 100%;
+    text-align: center;
+  }
+  .footer-credit:hover img { transform: none; }
   .footer-credit::before { display: none; }
   .footer-credit img { order: -1; flex: none; }
 }
@@ -1696,9 +1708,6 @@ body:not(.marquees-ready) .marquee-group span { font-size: clamp(1.05rem, 1.6vw,
 }
 @media (max-width: 960px) {
   body:has(.menu-toggle[aria-expanded=true]) .whatsapp-float { display: none; }
-}
-@media (max-width: 600px) {
-  .footer-inner { padding-bottom: 4.8rem; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .whatsapp-float { animation: whatsapp-enter .55s .18s var(--motion) backwards; }
