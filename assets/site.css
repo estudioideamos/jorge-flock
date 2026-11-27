@@ -561,11 +561,11 @@ body:not(.marquees-ready) .marquee-group { flex: 0 0 100%; }
 }
 .marquee-group span::before {
   content: "";
-  width: .6rem;
-  height: .55rem;
-  background: linear-gradient(90deg, #945b36 28%, transparent 28% 55%, #945b36 55% 83%, transparent 83%);
-  opacity: .6;
-  transform: skewX(-25deg);
+  flex: 0 0 .34rem;
+  width: .34rem;
+  height: .34rem;
+  border: 1px solid #945b36;
+  transform: rotate(45deg);
 }
 .marquee-toggle {
   display: grid;
